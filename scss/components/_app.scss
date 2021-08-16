@@ -6,8 +6,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    font-family: "Signika", "Palatino Linotype", serif;
-    font-size: 14px;
+    font-family: "Ddin";
+    font-size: 18px;
     box-shadow: 0 0 50vw #000 inset;
 }
 
@@ -16,30 +16,16 @@ body {
     right: 30%;
 }
 
-#logo::after {
-    width: 150px;
-    height: 50px;
-    background-image: url("../img/logochannel.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
 #sidebar {
     -webkit-box-shadow: -27px 0px 52px 10px rgb(11, 17, 11);
     -moz-box-shadow: -27px 0px 52px 10px gb(11, 17, 11);
     box-shadow: -27px 0px 52px 10px gb(11, 17, 11);
-    // background-image: url(../img/fondchat.jpg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
+    background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+    background-position: 55% 50%;
+    background-size: 500% 100%;
 }
 
 #chat-log {
-    background-image: url(../img/fondchat.jpg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
     border: 2px black solid;
     list-style-position: inside;
 }
@@ -65,5 +51,6 @@ body {
     color: #afada6;
     overflow-y: auto;
     overflow-x: hidden;
-    background: url(../img/fondTemp.png) repeat;
+    background: url(../img/fondTemp.png);
+    background-size: cover;
 }

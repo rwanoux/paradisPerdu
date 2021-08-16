@@ -1,15 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap");
+@font-face {
+  font-family: "aileron";
+  src: url("../font/Ailerons.ttf");
+}
+
+@font-face {
+  font-family: "built";
+  src: url("../font/built titling sb.ttf");
+}
+
+@font-face {
+  font-family: "Ddin";
+  src: url("../font/D-DINCondensed.ttf");
+}
+
 /* Global styles */
-.window-app {
-  font-family: "Roboto", sans-serif;
-}
-
-.rollable:hover, .rollable:focus {
-  color: #000;
-  text-shadow: 0 0 10px red;
-  cursor: pointer;
-}
-
 .grid,
 .grid-2col {
   display: grid;
@@ -135,8 +140,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-family: "Signika", "Palatino Linotype", serif;
-  font-size: 14px;
+  font-family: "Ddin";
+  font-size: 18px;
   -webkit-box-shadow: 0 0 50vw #000 inset;
   box-shadow: 0 0 50vw #000 inset;
 }
@@ -146,28 +151,15 @@ body {
   right: 30%;
 }
 
-#logo::after {
-  width: 150px;
-  height: 50px;
-  background-image: url("../img/logochannel.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
 #sidebar {
   -webkit-box-shadow: -27px 0px 52px 10px #0b110b;
   box-shadow: -27px 0px 52px 10px gb(11, 17, 11);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
+  background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+  background-position: 55% 50%;
+  background-size: 500% 100%;
 }
 
 #chat-log {
-  background-image: url(../img/fondchat.jpg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
   border: 2px black solid;
   list-style-position: inside;
 }
@@ -194,7 +186,8 @@ body {
   color: #afada6;
   overflow-y: auto;
   overflow-x: hidden;
-  background: url(../img/fondTemp.png) repeat;
+  background: url(../img/fondTemp.png);
+  background-size: cover;
 }
 
 @-webkit-keyframes roll {
@@ -353,7 +346,6 @@ body {
   padding: 10px;
   border: none;
   border-radius: 18px 0px 18px 0px;
-  font: normal 16px/normal "Times New Roman", Times, serif;
   color: rgba(0, 0, 0, 0.9);
   -o-text-overflow: clip;
   text-overflow: clip;
@@ -480,7 +472,9 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  color: #b3e8f5;
+  color: #464a4b;
+  font-family: "Ddin";
+  font-size: 18px;
   /* End of container */
 }
 
@@ -492,19 +486,17 @@ body {
   padding: 10px;
   border: none;
   border-radius: 18px 0px 18px 0px;
-  font: normal 16px/normal "Times New Roman", Times, serif;
   -o-text-overflow: clip;
   text-overflow: clip;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(126, 132, 146, 0.253)), color-stop(33%, rgba(212, 212, 212, 0.212)), to(rgba(167, 208, 243, 0.267)));
-  background-image: -o-linear-gradient(left, rgba(126, 132, 146, 0.253) 0, rgba(212, 212, 212, 0.212) 33%, rgba(167, 208, 243, 0.267) 100%);
-  background-image: linear-gradient(90deg, rgba(126, 132, 146, 0.253) 0, rgba(212, 212, 212, 0.212) 33%, rgba(167, 208, 243, 0.267) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(47, 50, 56, 0.253)), color-stop(33%, rgba(124, 121, 121, 0.363)), to(rgba(14, 112, 197, 0.267)));
+  background-image: -o-linear-gradient(left, rgba(47, 50, 56, 0.253) 0, rgba(124, 121, 121, 0.363) 33%, rgba(14, 112, 197, 0.267) 100%);
+  background-image: linear-gradient(90deg, rgba(47, 50, 56, 0.253) 0, rgba(124, 121, 121, 0.363) 33%, rgba(14, 112, 197, 0.267) 100%);
   background-position: 50% 50%;
   background-origin: padding-box;
-  -webkit-background-clip: border-box;
   background-clip: border-box;
   background-size: auto auto;
-  -webkit-box-shadow: 0 0 7px 4px rgba(65, 96, 119, 0.5);
-  box-shadow: 0 0 7px 4px rgba(65, 96, 119, 0.5);
+  -webkit-box-shadow: 0 0 7px rgba(18, 26, 32, 0.5);
+  box-shadow: 0 0 7px rgba(18, 26, 32, 0.5);
 }
 
 .paradisPerdu form.charsheet .bloque:hover {

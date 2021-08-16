@@ -71,13 +71,13 @@ Hooks.once('init', async function() {
 });
 //----reroll button chat ---
 
-Hooks.on("renderChatLog", (app, message, html, data) => {
-
-    Chat.addChatListeners(app, message, html, data)
+Hooks.on("renderChatMessage", (chatMessage, html, messageData) => {
+    console.log({ chatMessage }, { html }, { messageData })
+    Chat.addChatListeners(chatMessage, html, messageData)
 });
 Hooks.once("ready", async function() {
     var logo = document.getElementById("logo");
-    logo.setAttribute("src", "/systems/paradisPerdu/img/logoVTT.png");
+    logo.setAttribute("src", "/systems/paradisPerdu/img/paradisPerdu_titre.png");
     logo.style.maxWidth = "100px";
 
     // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
@@ -87,9 +87,6 @@ Hooks.once("ready", async function() {
 
 Hooks.on("renderActorSheet", async function() {
 
-
-    console.log("test-------------");
-    console.log("test---------222222----");
 
 
 })

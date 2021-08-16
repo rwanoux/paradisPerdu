@@ -3,7 +3,9 @@ form.charsheet {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  color: #b3e8f5;
+  color: #464a4b;
+  font-family: "Ddin";
+  font-size: 18px;
   /* End of container */
 }
 
@@ -15,19 +17,17 @@ form.charsheet .bloque {
   padding: 10px;
   border: none;
   border-radius: 18px 0px 18px 0px;
-  font: normal 16px/normal "Times New Roman", Times, serif;
   -o-text-overflow: clip;
   text-overflow: clip;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(126, 132, 146, 0.253)), color-stop(33%, rgba(212, 212, 212, 0.212)), to(rgba(167, 208, 243, 0.267)));
-  background-image: -o-linear-gradient(left, rgba(126, 132, 146, 0.253) 0, rgba(212, 212, 212, 0.212) 33%, rgba(167, 208, 243, 0.267) 100%);
-  background-image: linear-gradient(90deg, rgba(126, 132, 146, 0.253) 0, rgba(212, 212, 212, 0.212) 33%, rgba(167, 208, 243, 0.267) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(47, 50, 56, 0.253)), color-stop(33%, rgba(124, 121, 121, 0.363)), to(rgba(14, 112, 197, 0.267)));
+  background-image: -o-linear-gradient(left, rgba(47, 50, 56, 0.253) 0, rgba(124, 121, 121, 0.363) 33%, rgba(14, 112, 197, 0.267) 100%);
+  background-image: linear-gradient(90deg, rgba(47, 50, 56, 0.253) 0, rgba(124, 121, 121, 0.363) 33%, rgba(14, 112, 197, 0.267) 100%);
   background-position: 50% 50%;
   background-origin: padding-box;
-  -webkit-background-clip: border-box;
   background-clip: border-box;
   background-size: auto auto;
-  -webkit-box-shadow: 0 0 7px 4px rgba(65, 96, 119, 0.5);
-  box-shadow: 0 0 7px 4px rgba(65, 96, 119, 0.5);
+  -webkit-box-shadow: 0 0 7px rgba(18, 26, 32, 0.5);
+  box-shadow: 0 0 7px rgba(18, 26, 32, 0.5);
 }
 
 form.charsheet .bloque:hover {

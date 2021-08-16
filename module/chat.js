@@ -1,16 +1,16 @@
 import { reroll } from './rolls/reroll.js'
 
-export function addChatListeners(message, html, data) {
+export function addChatListeners(chatMessage, html, messageData) {
     html.on("click", ".rerollable", event => {
         event.preventDefault();
-        onReroll(event, message, html, data);
+        onReroll(event, chatMessage, html, messageData);
     })
 
 }
 
-function onReroll(event, message, html, data) {
+function onReroll(event, chatMessage, html, messageData) {
     console.log(arguments);
-    if (game.user.data.id == data.user.data.id || game.user.isGm) {
-        reroll(event, message, html, data);
+    if (chatMessage.isOwner || game.user.isGm) {
+        reroll(event, chatMessage, html, messageData);
     } else { ui.notifications.warn("vous tentez de relancer pour un jet que vous n'avez pas fait !") }
 }
