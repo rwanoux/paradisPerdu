@@ -12,12 +12,12 @@ les relances sont implémentées
 
 ### v0.0.4
 
-la carc ressource est automatiquement mise à jour après un succes total/échec total.
+la carc adrenaline est automatiquement mise à jour après un succes total/échec total.
 On peut lancer les dégats des armes depuis la fiche de perso.
 
 ### v0.0.3
 
-correction de l'input des compteurs santé/ressource/évolution
+correction de l'input des compteurs santé/adrenaline/évolution
 affichage direct de tous les résultats de dés.
 
 ### v0.0.2

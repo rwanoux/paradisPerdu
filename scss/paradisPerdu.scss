@@ -5,16 +5,19 @@
 @import "utils/variables";
 
 /* Global styles */
+
 @import "global/window";
 @import "global/grid";
 @import "global/flex";
 @import "components/app";
 @import "components/chat";
+
 /* Styles limited to paradis perdu sheets */
+
 .paradisPerdu {
-  @import "components/forms";
-  @import "components/resource";
-  @import "components/tabs";
-  @import "components/items";
-  
+    @import "components/charsheet";
+    @import "components/globalElements";
+    @import "components/resource";
+    @import "components/tabs";
+    @import "components/items";
 }

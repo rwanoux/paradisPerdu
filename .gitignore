@@ -1,7 +1,8 @@
 # IDE
 .idea/
 .vs/
-
+.vscode/
+foundry.js
 # Node Modules
 node_modules/
 npm-debug.log

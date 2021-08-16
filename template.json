@@ -6,7 +6,7 @@
 
                 "profil": "profil type",
                 "mots-clefs": "",
-                "def_pro": ""
+                "capacite": ""
             },
             "aptitudes": {
                 "agir": {
@@ -56,21 +56,16 @@
                 "santé": {
                     "value": 6,
                     "label": "santé",
-                    "max":6,
-                    "min":0
+                    "max": 6,
+                    "min": 0
                 },
-                "ressource":{
+                "adrenaline": {
                     "value": 6,
-                    "label": "ressource",
-                    "max":6,
-                    "min":0
-                },
-                "evolution":{
-                    "value": 0,
-                    "label": "évolution",
-                    "max":20,
-                    "min":0
+                    "label": "adrenaline",
+                    "max": 6,
+                    "min": 0
                 }
+
 
             },
 
@@ -85,23 +80,23 @@
     "Item": {
         "types": ["objet", "arme", "spécialité"],
         "objet": {
-            "isObject":true,
+            "isObject": true,
             "description": "",
             "quantity": 1
         },
         "arme": {
-            "isArme":true,
-            "des":1,
-            "relances":0,
+            "isArme": true,
+            "des": 1,
+            "relances": 0,
             "description": ""
 
         },
         "spécialité": {
-            "isSpé":true,
+            "isSpé": true,
             "aptitudeName": "",
             "aptitudeValue": 0,
             "relances": 0
-            
+
         }
     }
 }
