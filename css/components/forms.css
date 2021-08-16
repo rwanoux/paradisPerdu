@@ -1,0 +1,226 @@
+a:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.726);
+  color: white;
+}
+
+form.charsheet {
+  background-image: url(../img/fondTemp.png);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+form.charsheet .infos {
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+form.charsheet .aptitudes {
+  grid-column: 1/2;
+  grid-row: 2/5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /* End of container */
+}
+
+form.charsheet .aptitudes .aptiLine {
+  position: relative;
+  background: rgba(2, 0, 36, 0.363);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 0, 36, 0.4)), color-stop(42%, rgba(9, 9, 121, 0.3)), to(rgba(0, 212, 255, 0)));
+  background: -o-linear-gradient(left, rgba(2, 0, 36, 0.4) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.4) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+form.charsheet .aptitudes .aptiLine .line {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 20%;
+  height: 60%;
+  width: 0%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(65, 58, 196, 0.685)), color-stop(42%, rgba(9, 9, 121, 0.3)), to(rgba(0, 212, 255, 0)));
+  background: -o-linear-gradient(left, rgba(65, 58, 196, 0.685) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(65, 58, 196, 0.685) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+  border-radius: 0% 0% 0% 0%;
+}
+
+form.charsheet .aptitudes .aptiLine .aptilabel {
+  width: 70%;
+  z-index: +1;
+}
+
+form.charsheet .aptitudes .aptiLine .button {
+  width: 30%;
+}
+
+form.charsheet .aptitudes .button {
+  position: relative;
+  left: 0%;
+  top: 80%;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(30deg);
+  transform: translate3d(-50%, -50%, 0) rotate(30deg);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+form.charsheet .aptitudes .button {
+  cursor: pointer;
+  width: 40px;
+  height: 34.64102px;
+}
+
+form.charsheet .aptitudes .button .hex + input.paradisPerdu {
+  -webkit-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+  z-index: 100;
+  border: none;
+  color: white;
+  text-align: center;
+  width: 35px;
+  position: relative;
+  top: 3px;
+  left: 3px;
+  font-size: x-large;
+}
+
+form.charsheet .aptitudes .button .hex + input.paradisPerdu:focus {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #afd8e4;
+}
+
+form.charsheet .aptitudes .button:last-child {
+  margin-right: 0;
+}
+
+form.charsheet .aptitudes .button:hover .hex:last-child {
+  opacity: 1;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+form.charsheet .aptitudes .button:hover .hex:first-child {
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+form.charsheet .aptitudes .button:hover .hex:first-child div:before,
+form.charsheet .aptitudes .button:hover .hex:first-child div:after {
+  height: 5px;
+}
+
+form.charsheet .aptitudes .hex {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 20px;
+  height: 34.64102px;
+  opacity: 0.5;
+}
+
+form.charsheet .aptitudes .hex:first-child {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 0;
+}
+
+form.charsheet .aptitudes .hex:last-child {
+  -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 1;
+}
+
+form.charsheet .aptitudes .hex div {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 34.64102px;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+
+form.charsheet .aptitudes .hex div:before, form.charsheet .aptitudes .hex div:after {
+  content: " ";
+  position: absolute;
+  background: #3077d4;
+  width: 100%;
+  height: 1px;
+  -webkit-transition: height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+form.charsheet .aptitudes .hex div:before {
+  top: 0;
+}
+
+form.charsheet .aptitudes .hex div:after {
+  bottom: 0;
+}
+
+form.charsheet .aptitudes .hex div:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+form.charsheet .aptitudes .hex div:nth-child(2) {
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+form.charsheet .aptitudes .hex div:nth-child(3) {
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+form.charsheet .aptiLine:nth-child(odd) .button {
+  margin-left: 45px;
+}
+
+form.charsheet .aptiLine:nth-child(even) .button {
+  margin-left: 5px;
+}
+
+form.charsheet .aptiLine:hover .line {
+  width: 50%;
+  border-radius: 0% 50% 50% 0%;
+}
+
+form.charsheet .aptiLine:hover .button {
+  left: -20%;
+  z-index: +2;
+}

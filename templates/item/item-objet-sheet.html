@@ -1,0 +1,26 @@
+<form class="{{cssClass}} bloque" autocomplete="off">
+
+
+
+
+
+    <div class="bloque">
+        <img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        <label class="pastille">nom </label>
+        <input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="Name" />
+    </div>
+
+    <div class="compteur ">
+        <label class="pastille">quantité</label>
+        <input class="paradisPerdu" type="number" name="data.type" value="{{data.data.type}}" data-dtype="Number" />
+    </div>
+    <div class="bloque">
+        <label class="pastille">description</label>
+
+        {{editor content=data.data.description target="data.data.description" button=true isOwner=isOwner
+        editable=editable}}
+    </div>
+    </div>
+
+
+</form>

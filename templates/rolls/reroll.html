@@ -1,0 +1,48 @@
+<div class="titre1">
+    <p class="info">
+        jet de {{aptiName}}{{#if spe}} / {{spe}} {{/if}} avec {{aptiDice}} dés
+    </p>
+    {{#if relances}}
+    <p class="info">
+        {{relances}} relance(s) grâce au 6
+    </p>
+    {{/if}}
+</div>
+<div class="bloque">
+    <span class="resultat left">{{result}} </span><span class="left">succès</span>
+    <span class=" right"> difficulté {{difficulte}}</span>
+</div>
+<ul class="dice-rolls flexrow">
+    {{#each dicesResults as |d|}}
+            <li class=" die d6 dice{{d}}{{#if ../relanceDispo}} rerollable{{/if}} ">{{d}}</div>
+    {{/each}}
+</ul >
+
+{{#if relanceDispo}}
+<div class="bloque ">
+
+    <span class="info">vous pouvez relancer <span class="nbrRelance" dataRelance="{{relanceDispo}}">{{relanceDispo}}</span> dés</span>
+
+</div>
+{{/if}}
+
+{{#if echec}}
+<div class="bloque echec">
+    c'est un échec
+</div>
+{{/if}}
+{{#if reussite}}
+<div class="bloque reussite">
+    c'est une réussite
+</div>
+{{/if}}
+{{#if echecT}}
+<div class="bloque echec">
+    c'est un échec total <p class="info">(-1pt de resource)</p>
+</div>
+{{/if}}
+{{#if reussiteT}}
+<div class="bloque reussite">
+    c'est une reussite totale <p class="info">(+1pt de resource)</p>
+</div>
+{{/if}}

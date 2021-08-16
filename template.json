@@ -1,0 +1,107 @@
+{
+    "Actor": {
+        "types": ["personnage", "npc"],
+        "personnage": {
+            "informations": {
+
+                "profil": "profil type",
+                "mots-clefs": "",
+                "def_pro": ""
+            },
+            "aptitudes": {
+                "agir": {
+                    "value": 2,
+                    "label": "agir"
+                },
+                "connaitre": {
+                    "value": 2,
+                    "label": "connaitre"
+                },
+                "endurer": {
+                    "value": 2,
+                    "label": "endurer"
+                },
+                "forcer": {
+                    "value": 2,
+                    "label": "forcer"
+                },
+                "percevoir": {
+                    "value": 2,
+                    "label": "percevoir"
+                },
+                "simposer": {
+                    "value": 2,
+                    "label": "s'imposer"
+                },
+                "savoirfaire": {
+                    "value": 2,
+                    "label": "savoir-faire"
+                },
+                "sebattre": {
+                    "value": 2,
+                    "label": "se battre"
+                },
+                "secontroler": {
+                    "value": 2,
+                    "label": "se controler"
+                },
+                "viser": {
+                    "value": 2,
+                    "label": "viser"
+                }
+
+
+            },
+            "compteurs": {
+                "santé": {
+                    "value": 6,
+                    "label": "santé",
+                    "max":6,
+                    "min":0
+                },
+                "ressource":{
+                    "value": 6,
+                    "label": "ressource",
+                    "max":6,
+                    "min":0
+                },
+                "evolution":{
+                    "value": 0,
+                    "label": "évolution",
+                    "max":20,
+                    "min":0
+                }
+
+            },
+
+            "notes": {
+                "label": "notes",
+                "value": ""
+            }
+        }
+
+
+    },
+    "Item": {
+        "types": ["objet", "arme", "spécialité"],
+        "objet": {
+            "isObject":true,
+            "description": "",
+            "quantity": 1
+        },
+        "arme": {
+            "isArme":true,
+            "des":1,
+            "relances":0,
+            "description": ""
+
+        },
+        "spécialité": {
+            "isSpé":true,
+            "aptitudeName": "",
+            "aptitudeValue": 0,
+            "relances": 0
+            
+        }
+    }
+}

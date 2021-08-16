@@ -1,0 +1,34 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+
+
+
+    <div class="bloque">
+
+        <div class="bloque">
+            <img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+            <label class="pastille">nom </label>
+            <input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="Name" />
+        </div>
+
+        <div>
+            <label class="pastille">aptitude</label>
+
+            <select name="data.aptitudeName">
+                {{#select data.data.aptitudeName}}
+                <option>-selectionner l'apitude-</option>
+                {{#each config.aptitude as |apti|}}
+                <option value="{{apti}}">{{apti}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+
+            <label class="pastille">relances</label>
+            <input type="number" name="data.relances" class="paradisPerdu" value="{{data.data.relances}}"
+                placeholder="0" />
+        </div>
+
+    </div>
+
+
+</form>

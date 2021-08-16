@@ -1,0 +1,18 @@
+<section class="paradisPerdu">
+<h1>{{actor.name}} fait un jet de {{apti}}</h1>
+<p>
+    <span>l'action est </span>
+    <select id="diff" name="diff">
+        {{#select diff}}
+        {{#each diff as |diff|}}
+        <option value="{{diff.value}}">{{diff.label}}</option>
+        {{/each}}
+        {{/select}}
+    </select>
+</p>
+<p>
+    utiliser des points de ressource ? <span class="info">(max {{actor.data.data.compteurs.ressource.value}})</span>
+    <input type="number" class="paradisPerdu" style="color:white" id="ressource" placeholder="0"/>
+</p>
+
+</section>

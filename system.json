@@ -1,0 +1,39 @@
+{
+  "name": "paradisPerdu",
+  "title": "paradis perdu",
+  "description": "The paradis perdu system for FoundryVTT! --FRENCH ONLY--",
+  "version": "0.0.7",
+  "minimumCoreVersion": "0.8.6",
+  "compatibleCoreVersion": "0.8.8",
+  "templateVersion": 2,
+  "author": "Rwanoux",
+  "esmodules": [
+    "module/paradisPerdu.js"
+  ],
+  "styles": [
+    "css/paradisPerdu.css"
+  ],
+  "scripts": [],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "pre-tires",
+      "label": "paradisPerdu-prétirés",
+      "path": "packs/pre-tires.db",
+      "entity": "Actor",
+      "system": "paradisPerdu"
+    }
+  ],
+  "socket": true,
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "url": "https://github.com/rwanoux/channel-fear",
+  "manifest": "https://raw.githubusercontent.com/rwanoux/channel-fear/master/system.json",
+  "download": "https://github.com/rwanoux/channel-fear/archive/master.zip"
+}
