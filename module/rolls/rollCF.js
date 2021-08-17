@@ -3,7 +3,6 @@ import {
 } from "../config/config.js";
 
 export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
-    console.log(arguments)
     if (apt === "degats") {
 
         let aptiName = "dégats";
@@ -99,7 +98,6 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
                 apti: aptDice
             });
             await r.evaluate();
-            console.log(r);
 
             //interprétation
             let nbDes = r.dice[0].results.length;
@@ -122,7 +120,6 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
                 newRess--;
                 echecT = true;
             }
-            console.log("------------newRess-------" + newRess);
 
             for (let res of r.terms[0].results) {
                 dicesResults.push(res.result);

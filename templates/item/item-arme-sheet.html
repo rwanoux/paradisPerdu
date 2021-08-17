@@ -1,4 +1,4 @@
-<form class="{{cssClass}} bloque" autocomplete="off">
+<form class="{{cssClass}} itemSheet" autocomplete="off">
     {{log "handlebar item-arme-sheet" this}}
     <div class="bloque">
         <img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
@@ -11,14 +11,11 @@
 
 
         <label class="pastille">relance</label>
-        <input class="paradisPerdu" type="number" name="data.relances" value="{{data.data.relances}}"
-            data-dtype="Number" />
+        <input class="paradisPerdu" type="number" name="data.relances" value="{{data.data.relances}}" data-dtype="Number" />
     </div>
 
 
     <section class=" bloque">
-        <label class="pastille">description</label>
-        {{editor content=data.data.description target="data.data.description" button=true isOwner=isOwner
-        editable=editable}}
+        <label class="pastille">description</label> {{editor content=data.data.description target="data.data.description" button=true isOwner=isOwner editable=editable}}
     </section>
 </form>

@@ -48,9 +48,21 @@ body {
     -ms-flex-pack: start;
     justify-content: flex-start;
     padding: 12px;
-    color: #afada6;
+    color: #000000;
     overflow-y: auto;
     overflow-x: hidden;
     background: url(../img/fondTemp.png);
     background-size: cover;
+}
+
+button {
+    background-color: rgb(99, 147, 202);
+}
+
+select {
+    background-color: rgb(99, 147, 202);
+    option {
+        color: wheat;
+        background-color: rgb(28, 61, 92)
+    }
 }

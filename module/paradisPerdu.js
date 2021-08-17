@@ -72,7 +72,6 @@ Hooks.once('init', async function() {
 //----reroll button chat ---
 
 Hooks.on("renderChatMessage", (chatMessage, html, messageData) => {
-    console.log({ chatMessage }, { html }, { messageData })
     Chat.addChatListeners(chatMessage, html, messageData)
 });
 Hooks.once("ready", async function() {

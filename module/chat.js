@@ -9,7 +9,6 @@ export function addChatListeners(chatMessage, html, messageData) {
 }
 
 function onReroll(event, chatMessage, html, messageData) {
-    console.log(arguments);
     if (chatMessage.isOwner || game.user.isGm) {
         reroll(event, chatMessage, html, messageData);
     } else { ui.notifications.warn("vous tentez de relancer pour un jet que vous n'avez pas fait !") }

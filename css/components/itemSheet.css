@@ -1,0 +1,29 @@
+.aptiLine {
+  margin-top: 10px;
+  height: 30px;
+  padding-left: 5px;
+  position: relative;
+  background: rgba(2, 0, 36, 0.363);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 0, 36, 0.4)), color-stop(42%, rgba(9, 9, 121, 0.3)), to(rgba(0, 212, 255, 0)));
+  background: -o-linear-gradient(left, rgba(2, 0, 36, 0.4) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.4) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.aptiLine .aptilabel {
+  width: 70%;
+  z-index: +1;
+}
+
+.aptiLine .button {
+  width: 30%;
+}
