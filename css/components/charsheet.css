@@ -148,12 +148,6 @@ form.itemSheet .item {
   position: relative;
 }
 
-form.actorSheet .item a,
-form.itemSheet .item a {
-  text-transform: uppercase;
-  border-bottom: black;
-}
-
 form.actorSheet .item .item-controls,
 form.itemSheet .item .item-controls {
   position: absolute;

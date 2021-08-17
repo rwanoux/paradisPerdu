@@ -104,28 +104,25 @@
         <div class="titre1">INVENTAIRE</div>
         <ol class="items-list">
             {{#each actor.items as |item id|}} {{#unless item.data.data.isSpé}}
-            <div class="item bloque" data-item-id="{{item.id}}">
+            <div class="item aptiLine bloque" data-item-id="{{item.id}}">
                 <div class="item-controls ">
                     <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                     <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
 
                 </div>
-                <div class="flex-row">
-                    <p>
 
-                        <h4>
-                            <img src="{{item.img}}" title="{{item.name}}" style="width:36px" /> {{item.name}} {{#if item.data.data.isArme}} {{/if}}
-                        </h4>
-                    </p>
-                    {{#if item.data.data.isArme}}
-                    <p>
-                        <a class="boutondgt roll " title="jeter les dégats" rollCF="degats" rollDegats="{{item.data.data.des}}" rollSpe="{{item.name}}" rollRelances="{{item.data.data.relances}}">
-                            <img src="icons/svg/explosion.svg" height="16px" /> {{data.data.des}} dégats {{data.data.relances}} relances</a>
-                    </p>
-                    {{/if}}
-                    <p>{{{item.data.data.description}}}</p>
-                </div>
+                <p>
+                    <img src="{{item.img}}" title="{{item.name}}" style="width:16px" /> {{item.name}}
+                </p>
+                {{#if item.data.data.isArme}}
+                <p>
+                    <a class="boutondgt roll " title="jeter les dégats" rollCF="degats" rollDegats="{{item.data.data.des}}" rollSpe="{{item.name}}" rollRelances="{{item.data.data.relances}}">
+                        <img src="icons/svg/explosion.svg" height="16px" /> {{data.data.des}} dégats {{data.data.relances}} relances</a>
+                </p>
+                {{/if}}
+                <p>{{{item.data.data.description}}}</p>
             </div>
+
             {{/unless}} {{/each}}
         </ol>
     </div>
