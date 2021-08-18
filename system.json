@@ -14,22 +14,26 @@
         "css/paradisPerdu.css"
     ],
     "scripts": [],
-    "languages": [{
-        "lang": "fr",
-        "name": "Français",
-        "path": "lang/fr.json"
-    }],
-    "packs": [{
-        "name": "pre-tires",
-        "label": "paradisPerdu-prétirés",
-        "path": "packs/pre-tires.db",
-        "entity": "Actor",
-        "system": "paradisPerdu"
-    }],
+    "languages": [
+        {
+            "lang": "fr",
+            "name": "Français",
+            "path": "lang/fr.json"
+        }
+    ],
+    "packs": [
+        {
+            "name": "pre-tires",
+            "label": "paradisPerdu-prétirés",
+            "path": "packs/pre-tires.db",
+            "entity": "Actor",
+            "system": "paradisPerdu"
+        }
+    ],
     "socket": true,
     "gridDistance": 1,
     "gridUnits": "m",
     "url": "https://github.com/rwanoux/channel-fear",
-    "manifest": "https://raw.githubusercontent.com/rwanoux/channel-fear/master/system.json",
-    "download": "https://github.com/rwanoux/channel-fear/archive/master.zip"
+    "manifest": "https://raw.githubusercontent.com/rwanoux/paradisPerdu/master/system.json",
+    "download": "https://github.com/rwanoux/paradisPerdu/archive/master.zip"
 }
