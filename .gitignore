@@ -8,5 +8,5 @@ node_modules/
 npm-debug.log
 
 foundry.js
-scss/
+*scss
 css/*/*
