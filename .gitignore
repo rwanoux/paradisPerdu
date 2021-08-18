@@ -2,8 +2,11 @@
 .idea/
 .vs/
 .vscode/
-foundry.js
-scss/
+
 # Node Modules
 node_modules/
 npm-debug.log
+
+foundry.js
+scss/
+css/*/*

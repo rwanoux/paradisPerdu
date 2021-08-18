@@ -482,7 +482,7 @@ select option {
   }
 }
 
-/* Styles limited to paradis perdu sheets */
+/* Styles      limited to paradis perdu sheets */
 .paradisPerdu form.actorSheet,
 .paradisPerdu form.itemSheet {
   background-image: url(../img/fondTemp.png);
