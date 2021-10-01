@@ -76,14 +76,15 @@ export class paradisPerduActorSheet extends ActorSheet {
         // Update Inventory Item
         html.find('.item-edit').click(ev => {
             const li = $(ev.currentTarget).parents(".item");
-            const item = this.actor.getOwnedItem(li.data("itemId"));
+            console.log(this.actor)
+            const item = this.actor.getEmbeddedDocument('Item', li.data("itemId"));
             item.sheet.render(true);
         });
 
         // Delete Inventory Item
         html.find('.item-delete').click(ev => {
             const li = $(ev.currentTarget).parents(".item");
-            this.actor.deleteOwnedItem(li.data("itemId"));
+            this.actor.deleteEmbeddedDocuments('Item', [li.data("itemId")]);
             li.slideUp(200, () => this.render(false));
         });
 
