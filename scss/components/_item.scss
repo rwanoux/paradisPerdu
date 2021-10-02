@@ -1,0 +1,46 @@
+select[name="data.aptitudeName"] {
+    color: black;
+    option {
+        color: white
+    }
+}
+
+.items-list {
+    list-style: none;
+    margin: 7px 0;
+    padding: 0;
+    overflow-y: auto;
+    .item-header {
+        font-weight: bold;
+    }
+    .item {
+        line-height: 24px;
+        padding: 3px 0;
+        border-bottom: 1px solid #BBB;
+        img.item-image {
+            flex: 0 0 24px;
+            margin: 5px;
+            max-width: 30px;
+            display: inline;
+            border: none;
+            max-width: 20px
+        }
+        img {
+            display: block;
+            border: none;
+        }
+    }
+    .item-name {
+        margin: 0;
+    }
+    .item-controls {
+        flex: 0 0 86px;
+        text-align: right;
+    }
+}
+
+img.item-image {
+    margin-right: 5px;
+    max-width: 64px;
+    display: inline;
+}

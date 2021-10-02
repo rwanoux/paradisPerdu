@@ -1,0 +1,74 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: "Ddin", sans-serif;
+    font-size: 18px;
+    box-shadow: 0 0 50vw #000 inset;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'aileron';
+    font-weight: bolder;
+}
+
+#logo {
+    position: relative;
+}
+
+#sidebar {
+    -webkit-box-shadow: -27px 0px 52px 10px rgb(11, 17, 11);
+    -moz-box-shadow: -27px 0px 52px 10px gb(11, 17, 11);
+    box-shadow: -27px 0px 52px 10px gb(11, 17, 11);
+    background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+    background-position: 55% 50%;
+    background-size: 500% 100%;
+}
+
+#chat-log {
+    border: 2px black solid;
+    list-style-position: inside;
+}
+
+#board {
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 100px rgba(255, 255, 255, 0.6) inset;
+}
+
+.window-app .window-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding: 12px;
+    color: #000000;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: url(../img/fondTemp.png);
+    background-size: cover;
+}
+
+button {
+    background: linear-gradient(#ffd1d173, #9198e5);
+}
+
+select {
+    background: linear-gradient(#ffd1d173, #9198e5);
+    option {
+        color: wheat;
+        background-color: rgb(28, 61, 92)
+    }
+}

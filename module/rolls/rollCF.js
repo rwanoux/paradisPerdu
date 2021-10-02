@@ -126,6 +126,7 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
             }
             if (adrenaline) { newRess = newRess - adrenaline };
             if (newRess > 6) { newRess = 6 };
+            if (newRess <= 0) { newRess = 0 };
 
             let rollConfig = {
                 adrenaline: adrenaline,

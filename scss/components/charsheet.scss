@@ -1,0 +1,269 @@
+$sqrt3: 1.7320508075688772;
+$edgeSize: 25px;
+$hexWidth: $edgeSize * 2;
+$hexHeight: $sqrt3 * $edgeSize;
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+// Display
+$borderHover: 2px;
+$dark: rgb(29, 67, 124);
+form.actorSheet,
+form.itemSheet {
+    background-image: url(../img/fondTemp.png);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    color: rgb(70, 74, 75);
+    font-family: "Ddin";
+    font-size: 18px;
+    .aptiLine {
+        margin-top: 10px;
+        height: 30px;
+        padding-left: 5px;
+        position: relative;
+        background: rgba(2, 0, 36, 0.363);
+        background: linear-gradient( 90deg, rgba(2, 0, 36, 0.4) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .aptilabel {
+            width: 70%;
+            z-index: +1;
+        }
+        .button {
+            width: 30%;
+        }
+    }
+    .aptiLine {
+        margin-top: 10px;
+        height: 30px;
+        padding-left: 5px;
+        position: relative;
+        background: rgba(2, 0, 36, 0.363);
+        background: linear-gradient( 90deg, rgba(2, 0, 36, 0.4) 0%, rgba(9, 9, 121, 0.3) 42%, rgba(0, 212, 255, 0) 100%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .aptilabel {
+            width: 70%;
+            z-index: +1;
+        }
+        .button {
+            width: 30%;
+        }
+    }
+    input[type="text"],
+    input[type="number"] {
+        box-shadow: 0 0 0px rgba(0, 204, 255, 0.788);
+        color: rgb(59, 81, 87);
+        text-align: center;
+    }
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="password"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus {
+        box-shadow: 0 0 5px rgba(0, 204, 255, 0.788);
+    }
+    div.property-textarea {
+        width: 100%;
+        min-height: 35px;
+        border: 1px solid black
+    }
+    .titre1 {
+        color: white;
+        text-align: center;
+        font-family: 'aileron';
+        content: '';
+        background: rgb(0, 0, 0);
+        font-size: larger;
+        //z-index: -1;
+        transform: skew(-25deg);
+        box-shadow: 3px 3px 0 0 rgba(0, 26, 255, 0.425);
+        span {
+            transform: skew(25deg);
+        }
+    }
+    span.pastille {
+        position: relative;
+        top: 15px;
+        left: 5px;
+        display: inline-block;
+        transform: rotate( 327deg);
+        background: black;
+        padding: 5px;
+    }
+    .item {
+        padding: 5px;
+        padding-top: 15px;
+        position: relative;
+        .item-controls {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            color: black;
+            text-shadow: 0px 0px 5px white;
+        }
+    }
+    .infos {
+        grid-column: 1/4;
+        grid-row: 1/2;
+        .img-cont {
+            max-width: 120px;
+        }
+        .info-blok {
+            width: 90%;
+            margin-left: 15px;
+        }
+    }
+    .aptitudes {
+        grid-column: 1/2;
+        grid-row: 2/5;
+        display: flex;
+        flex-direction: column;
+        .aptiLine:nth-child(odd) {
+            .button {
+                margin-left: -10px;
+            }
+        }
+        .aptiLine:nth-child(even) {
+            .button {
+                margin-left: -45px;
+            }
+        }
+        .aptiLine:hover {
+            .button {
+                transform: scale(1.3);
+                margin-left: 0%;
+                z-index: +2;
+                .hex>div {
+                    background-color: rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+    .specialites {
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+    .inventaire {
+        grid-column: 2/4;
+        grid-row: 3/4;
+        h4 {
+            text-align: center;
+        }
+        img {
+            display: inline-block;
+        }
+    }
+    .compteur {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        grid-column: 2/4;
+        grid-row: 4/5;
+        .button {
+            margin-top: 20px;
+        }
+    }
+    .button {
+        position: relative;
+        transition: 0.3s;
+        left: 5%;
+    }
+    /* End of container */
+    // Contains 2 hexagons (.hex)
+    .button {
+        // Hexagon
+        // Easing
+        cursor: pointer;
+        width: $hexWidth;
+        height: $hexHeight;
+        .hex+input.paradisPerdu {
+            z-index: 100;
+            border: none;
+            text-align: center;
+            width: 35px;
+            position: relative;
+            top: 8px;
+            left: 8px;
+            font-size: x-large;
+            color: black
+        }
+        .hex+input.paradisPerdu:focus {
+            border: none;
+            box-shadow: none;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        // Hover state
+        &:hover {
+            .hex:last-child {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+            .hex:first-child {
+                opacity: 1;
+                div:before,
+                div:after {
+                    height: $borderHover;
+                }
+                transform: scale(1.2);
+            }
+        }
+    }
+    // Contains 3 div that makes the hexagon
+    .hex {
+        position: absolute;
+        top: 0;
+        left: $edgeSize/2;
+        width: $edgeSize;
+        height: $hexHeight;
+        opacity: 0.5;
+        // Inset
+        &:first-child {
+            transform: scale(0.9);
+            transition: all 0.5s $ease-out-quart;
+            z-index: 0;
+        }
+        // Outset
+        &:last-child {
+            transition: all 0.3s $ease-out-expo;
+            z-index: 1;
+        }
+        div {
+            background-color: rgb(240, 240, 240);
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            width: $edgeSize;
+            height: $hexHeight;
+            &:before,
+            &:after {
+                content: " ";
+                position: absolute;
+                background: $dark;
+                width: 100%;
+                height: 1px;
+                transition: height 0.3s $ease-out-quart;
+            }
+            &:before {
+                top: 0;
+            }
+            &:after {
+                bottom: 0;
+            }
+            &:nth-child(1) {
+                transform: rotate(0deg);
+            }
+            &:nth-child(2) {
+                transform: rotate(60deg);
+            }
+            &:nth-child(3) {
+                transform: rotate(120deg);
+            }
+            transform-origin: center center;
+        }
+    }
+}

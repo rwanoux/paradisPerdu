@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap');
+$font-primary: 'Roboto',
+sans-serif;
+$font-secondary: 'Roboto',
+sans-serif;
+@font-face {
+    font-family: "aileron";
+    src: url('../font/Ailerons.ttf') format("truetype");
+    font-stretch: normal;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "built";
+    src: url('../font/built titling sb.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Ddin";
+    src: url('../font/D-DINCondensed.ttf') format("truetype");
+}
