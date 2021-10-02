@@ -35,9 +35,20 @@ export async function reroll(event, chatMessage, html, messageData) {
             content: contentHTML
 
         };
-        await r.toMessage(chatData);
-        chatMessage.delete();
+        if (game.dice3d) {
+            game.dice3d.showForRoll(r).then(
+                chatMessage.update(chatData)
+            )
+        } else {
+            chatMessage.update(chatData)
+        }
 
+        /*
+        r.toMessage(chatData).then(
+            chatMessage.delete()
+        );
+
+*/
     } else {
         ui.notifications.warn("Vous n'avez plus de relances disponible")
     }
