@@ -34,36 +34,6 @@ form.itemSheet {
         .button {
             width: 30%;
         }
-        .itemLine {
-            position: relative;
-            width: 100%;
-            color: white;
-            text-align: center;
-            font-family: 'aileron';
-            background: black;
-            font-size: larger;
-        }
-        .itemLine:before {
-            position: absolute;
-            content: '';
-            right: 0;
-            top: 0;
-            border-top: 25px solid #d5e9f9;
-            border-right: 20px solid #d5e9f9;
-            border-left: 20px solid black;
-        }
-        .itemLine:after {
-            position: absolute;
-            content: '.';
-            color: black;
-            right: 25px;
-            top: 0;
-            /* border-top: 25px solid #d5e9f900; */
-            border-right: 10px solid #4c646be3;
-            border-left: 5px solid #b0e8f980;
-            transform: skew( 39deg);
-            box-shadow: 0px 0px 15px #b0e8f97a;
-        }
     }
     div.bloque {
         position: relative;
@@ -147,16 +117,35 @@ form.itemSheet {
         padding: 5px;
     }
     .item {
-        padding: 5px;
-        padding-top: 15px;
+        color: black;
         position: relative;
+        width: 100%;
+        font-family: 'Ddin';
+        background: rgba(252, 252, 252, 0.623);
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        margin: 8px;
+        padding: 5px;
         .item-controls {
             position: absolute;
-            right: 0px;
+            right: 15px;
             top: 0px;
             color: black;
             text-shadow: 0px 0px 5px white;
         }
+    }
+    .item:before {
+        position: absolute;
+        content: ' ';
+        color: black;
+        right: 35px;
+        top: 0;
+        height: 100%;
+        border-right: 10px solid #4c646b8a;
+        border-left: 5px solid #b0e8f980;
+        transform: skew( 39deg);
+        box-shadow: 0px 0px 15px #b0e8f9a6;
     }
     .infos {
         grid-column: 1/4;

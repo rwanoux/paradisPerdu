@@ -180,6 +180,33 @@ h3 {
   box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 100px rgba(255, 255, 255, 0.6) inset;
 }
 
+#pause {
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  bottom: 50vh;
+  left: 45vw;
+  pointer-events: none;
+  z-index: var(--z-index-ui);
+  display: none;
+  background: unset;
+}
+
+#pause h3 {
+  color: #fff2a6;
+  font-size: xx-large;
+  text-shadow: 0px 0px 15px black;
+}
+
+#pause img {
+  opacity: 1;
+  content: url("../img/pause.png");
+  border: none;
+  -webkit-animation: rotation 15s infinite cubic-bezier(0.3, 1.83, 0.48, -1);
+  animation: rotation 15s infinite cubic-bezier(0.3, 1.83, 0.48, -1);
+  top: 0;
+}
+
 .window-app .window-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -390,16 +417,39 @@ select option {
 }
 
 #chat-log .titre1 {
+  position: relative;
+  width: 100%;
   color: white;
   text-align: center;
-  font-size: xx-large;
-  content: '';
+  font-family: 'aileron';
   background: black;
-  -webkit-transform: skew(-25deg);
-  -ms-transform: skew(-25deg);
-  transform: skew(-25deg);
-  -webkit-box-shadow: 3px 3px 0 0 rgba(0, 26, 255, 0.425);
-  box-shadow: 3px 3px 0 0 rgba(0, 26, 255, 0.425);
+  font-size: larger;
+}
+
+#chat-log .titre1:before {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 25px solid #d5e9f9;
+  border-right: 20px solid #d5e9f9;
+  border-left: 20px solid black;
+}
+
+#chat-log .titre1:after {
+  position: absolute;
+  content: '.';
+  color: black;
+  right: 25px;
+  top: 0;
+  /* border-top: 25px solid #d5e9f900; */
+  border-right: 10px solid #4c646be3;
+  border-left: 5px solid #b0e8f980;
+  -webkit-transform: skew(39deg);
+  -ms-transform: skew(39deg);
+  transform: skew(39deg);
+  -webkit-box-shadow: 0px 0px 15px #b0e8f97a;
+  box-shadow: 0px 0px 15px #b0e8f97a;
 }
 
 #chat-log .titre2 {
@@ -539,45 +589,6 @@ select option {
   width: 30%;
 }
 
-.paradisPerdu form.actorSheet .aptiLine .itemLine,
-.paradisPerdu form.itemSheet .aptiLine .itemLine {
-  position: relative;
-  width: 100%;
-  color: white;
-  text-align: center;
-  font-family: 'aileron';
-  background: black;
-  font-size: larger;
-}
-
-.paradisPerdu form.actorSheet .aptiLine .itemLine:before,
-.paradisPerdu form.itemSheet .aptiLine .itemLine:before {
-  position: absolute;
-  content: '';
-  right: 0;
-  top: 0;
-  border-top: 25px solid #d5e9f9;
-  border-right: 20px solid #d5e9f9;
-  border-left: 20px solid black;
-}
-
-.paradisPerdu form.actorSheet .aptiLine .itemLine:after,
-.paradisPerdu form.itemSheet .aptiLine .itemLine:after {
-  position: absolute;
-  content: '.';
-  color: black;
-  right: 25px;
-  top: 0;
-  /* border-top: 25px solid #d5e9f900; */
-  border-right: 10px solid #4c646be3;
-  border-left: 5px solid #b0e8f980;
-  -webkit-transform: skew(39deg);
-  -ms-transform: skew(39deg);
-  transform: skew(39deg);
-  -webkit-box-shadow: 0px 0px 15px #b0e8f97a;
-  box-shadow: 0px 0px 15px #b0e8f97a;
-}
-
 .paradisPerdu form.actorSheet div.bloque,
 .paradisPerdu form.itemSheet div.bloque {
   position: relative;
@@ -687,18 +698,42 @@ select option {
 
 .paradisPerdu form.actorSheet .item,
 .paradisPerdu form.itemSheet .item {
-  padding: 5px;
-  padding-top: 15px;
+  color: black;
   position: relative;
+  width: 100%;
+  font-family: 'Ddin';
+  background: rgba(252, 252, 252, 0.623);
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 8px;
+  padding: 5px;
 }
 
 .paradisPerdu form.actorSheet .item .item-controls,
 .paradisPerdu form.itemSheet .item .item-controls {
   position: absolute;
-  right: 0px;
+  right: 15px;
   top: 0px;
   color: black;
   text-shadow: 0px 0px 5px white;
+}
+
+.paradisPerdu form.actorSheet .item:before,
+.paradisPerdu form.itemSheet .item:before {
+  position: absolute;
+  content: ' ';
+  color: black;
+  right: 35px;
+  top: 0;
+  height: 100%;
+  border-right: 10px solid #4c646b8a;
+  border-left: 5px solid #b0e8f980;
+  -webkit-transform: skew(39deg);
+  -ms-transform: skew(39deg);
+  transform: skew(39deg);
+  -webkit-box-shadow: 0px 0px 15px #b0e8f9a6;
+  box-shadow: 0px 0px 15px #b0e8f9a6;
 }
 
 .paradisPerdu form.actorSheet .infos,
@@ -1014,8 +1049,8 @@ select option {
 }
 
 .paradisPerdu a:hover {
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.726);
-  color: white;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.904);
+  color: #8c96a3;
 }
 
 .paradisPerdu .resource-label {

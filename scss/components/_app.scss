@@ -40,6 +40,30 @@ h3 {
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 100px rgba(255, 255, 255, 0.6) inset;
 }
 
+#pause {
+    width: 10vw;
+    height: 10vw;
+    position: fixed;
+    bottom: 50vh;
+    left: 45vw;
+    pointer-events: none;
+    z-index: var(--z-index-ui);
+    display: none;
+    background: unset;
+    h3 {
+        color: rgb(255, 242, 166);
+        font-size: xx-large;
+        text-shadow: 0px 0px 15px black;
+    }
+    img {
+        opacity: 1;
+        content: url('../img/pause.png');
+        border: none;
+        animation: rotation 15s infinite cubic-bezier(.3, 1.83, .48, -1);
+        top: 0
+    }
+}
+
 .window-app .window-content {
     display: -webkit-box;
     display: -ms-flexbox;

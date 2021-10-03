@@ -128,14 +128,34 @@
         box-shadow: 0 0 7px 4px rgba(65, 96, 119, 0.5);
     }
     .titre1 {
+        position: relative;
+        width: 100%;
         color: white;
         text-align: center;
-        font-size: xx-large;
+        font-family: 'aileron';
+        background: black;
+        font-size: larger;
+    }
+    .titre1:before {
+        position: absolute;
         content: '';
-        background: rgb(0, 0, 0);
-        //z-index: -1;
-        transform: skew(-25deg);
-        box-shadow: 3px 3px 0 0 rgba(0, 26, 255, 0.425);
+        right: 0;
+        top: 0;
+        border-top: 25px solid #d5e9f9;
+        border-right: 20px solid #d5e9f9;
+        border-left: 20px solid black;
+    }
+    .titre1:after {
+        position: absolute;
+        content: '.';
+        color: black;
+        right: 25px;
+        top: 0;
+        /* border-top: 25px solid #d5e9f900; */
+        border-right: 10px solid #4c646be3;
+        border-left: 5px solid #b0e8f980;
+        transform: skew( 39deg);
+        box-shadow: 0px 0px 15px #b0e8f97a;
     }
     .titre2 {
         color: white;
