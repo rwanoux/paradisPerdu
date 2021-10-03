@@ -18,6 +18,7 @@ import {
     systemConfig
 } from "./config/config.js";
 import * as Chat from "./chat.js"
+import { registerHelpers } from "./handlebarHelpers.js";
 
 
 
