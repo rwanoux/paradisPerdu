@@ -6,11 +6,9 @@
 
 /* Styles limited to paradis perdu sheets */
 
-.paradisPerdu {
-    @import "components/charsheet";
-    @import "components/itemSheet";
-    @import "components/globalElements";
-    @import "components/_ressource";
-    @import "components/tabs";
-    @import "components/_item";
-}
+@import "components/charsheet";
+@import "components/itemSheet";
+@import "components/globalElements";
+@import "components/_ressource";
+@import "components/tabs";
+@import "components/_item";

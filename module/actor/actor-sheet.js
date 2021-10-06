@@ -17,8 +17,8 @@ export class paradisPerduActorSheet extends ActorSheet {
         return mergeObject(super.defaultOptions, {
             classes: ["paradisPerdu", "sheet", "actor"],
             template: "systems/paradisPerdu/templates/actor/actor-personnage-sheet.html",
-            width: 600,
-            height: 820,
+            width: 1160,
+            height: 850,
             tabs: [{
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",

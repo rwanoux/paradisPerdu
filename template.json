@@ -6,7 +6,10 @@
 
                 "profil": "profil type",
                 "mots-clefs": "",
-                "capacite": ""
+                "capacite": {
+                    "name": "nom de capacité",
+                    "description": "description de capacité"
+                }
             },
             "aptitudes": {
                 "agir": {
@@ -68,11 +71,34 @@
 
 
             },
+            "background": {
+                "situation": {
+                    "label": "situation",
+                    "text": ""
+                },
+                "secret": {
+                    "label": "secret",
+                    "text": ""
+                },
+                "objectifs": {
+                    "obj1": {
+                        "text": "",
+                        "isValid": true
+                    },
+                    "obj2": {
+                        "text": "",
+                        "isValid": true
+                    },
+                    "obj3": {
+                        "text": "",
+                        "isValid": true
+                    }
 
-            "notes": {
-                "label": "notes",
-                "value": ""
-            }
+
+                }
+            },
+            "notes": ""
+
         }
 
 

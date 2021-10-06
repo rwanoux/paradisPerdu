@@ -19,6 +19,7 @@ import {
 } from "./config/config.js";
 import * as Chat from "./chat.js"
 import { registerHelpers } from "./handlebarHelpers.js";
+import { sheetResize } from "./sheetResize.js";
 
 
 
@@ -55,20 +56,11 @@ Hooks.once('init', async function() {
         makeDefault: true
     });
 
-    // If you need to add Handlebars helpers, here are a few useful examples:
-    Handlebars.registerHelper('concat', function() {
-        var outStr = '';
-        for (var arg in arguments) {
-            if (typeof arguments[arg] != 'object') {
-                outStr += arguments[arg];
-            }
-        }
-        return outStr;
-    });
+    CONFIG.canvasTextStyle.fontFamily = "built";
+    CONFIG.fontFamilies.push("built", "Ddin", "aileron");
+    CONFIG.defaultFontFamily = "Ddin";
 
-    Handlebars.registerHelper('toLowerCase', function(str) {
-        return str.toLowerCase();
-    });
+    registerHelpers();
 });
 //----reroll button chat ---
 
@@ -79,7 +71,7 @@ Hooks.once("ready", async function() {
     var logo = document.getElementById("logo");
     logo.setAttribute("src", "/systems/paradisPerdu/img/paradisPerdu_titre.png");
     logo.style.maxWidth = "100px";
-
+    sheetResize();
     // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
     Hooks.on("hotbarDrop", (bar, data, slot) => createparadisPerduMacro(data, slot));
 
