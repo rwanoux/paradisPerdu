@@ -998,8 +998,8 @@ form.itemSheet .titre1 input:hover {
   box-shadow: 0px 0px 15px white inset;
 }
 
-form.actorSheet .titre1 .titleAdd,
-form.itemSheet .titre1 .titleAdd {
+form.actorSheet .titleAdd,
+form.itemSheet .titleAdd {
   background-color: #6e6e80;
   margin-top: 6px;
 }
@@ -1019,18 +1019,17 @@ form.itemSheet span.pastille {
 
 form.actorSheet .item,
 form.itemSheet .item {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   color: black;
   position: relative;
   font-family: "Ddin";
   background: white;
   margin: 8px;
   padding: 5px;
-  padding-top: 20px;
-  -webkit-box-shadow: -10px 10px 15px black;
-  box-shadow: -10px 10px 15px black;
+  padding-top: 15px;
+  -webkit-box-shadow: -10px 10px 15px black, 10px -10px 15px #0f1c36;
+  box-shadow: -10px 10px 15px black, 10px -10px 15px #0f1c36;
   -webkit-clip-path: polygon(-20px 0px, calc(100% - 35px) 0px, 100% 50%, 100% 100%, -20px 100%);
   clip-path: polygon(-20px 0%, calc(100% - 35px) 0px, 120% 50%, 120% 150%, -20px 150%);
 }
@@ -1038,14 +1037,6 @@ form.itemSheet .item {
 form.actorSheet .item .itemName,
 form.itemSheet .item .itemName {
   text-transform: uppercase;
-}
-
-form.actorSheet .item .itemApti,
-form.itemSheet .item .itemApti {
-  margin-left: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
-  background-color: #7199b96e;
 }
 
 form.actorSheet .item .relanceBox,
@@ -1231,8 +1222,9 @@ form.itemSheet .button .hex {
   transform: rotate(0deg);
 }
 
-form.actorSheet .button .hex + input.paradisPerdu,
-form.itemSheet .button .hex + input.paradisPerdu {
+form.actorSheet .button .hex + input,
+form.itemSheet .button .hex + input {
+  margin-left: 3px;
   z-index: 100;
   border: none;
   text-align: center;
@@ -1242,10 +1234,11 @@ form.itemSheet .button .hex + input.paradisPerdu {
   left: 8px;
   font-size: x-large;
   color: black;
+  background-color: transparent;
 }
 
-form.actorSheet .button .hex + input.paradisPerdu:focus,
-form.itemSheet .button .hex + input.paradisPerdu:focus {
+form.actorSheet .button .hex + input:focus,
+form.itemSheet .button .hex + input:focus {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;

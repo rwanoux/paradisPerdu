@@ -107,10 +107,10 @@ form.itemSheet {
                 box-shadow: 0px 0px 15px white inset;
             }
         }
-        .titleAdd {
-            background-color: #6e6e80;
-            margin-top: 6px;
-        }
+    }
+    .titleAdd {
+        background-color: #6e6e80;
+        margin-top: 6px;
     }
     span.pastille {
         position: relative;
@@ -122,25 +122,19 @@ form.itemSheet {
         padding: 5px;
     }
     .item {
-        justify-content: start;
+        justify-content: space-around;
         color: black;
         position: relative;
         font-family: "Ddin";
         background: white;
         margin: 8px;
         padding: 5px;
-        padding-top: 20px;
-        box-shadow: -10px 10px 15px black;
+        padding-top: 15px;
+        box-shadow: -10px 10px 15px black, 10px -10px 15px rgb(15, 28, 54);
         -webkit-clip-path: polygon(-20px 0px, calc(100% - 35px) 0px, 100% 50%, 100% 100%, -20px 100%);
         clip-path: polygon(-20px -0%, calc(100% - 35px) 0px, 120% 50%, 120% 150%, -20px 150%);
         .itemName {
             text-transform: uppercase;
-        }
-        .itemApti {
-            margin-left: 15px;
-            padding-left: 5px;
-            padding-right: 5px;
-            background-color: #7199b96e;
         }
         .relanceBox {
             position: relative;
@@ -256,7 +250,8 @@ form.itemSheet {
             transition: 0.6s;
             transform: rotate(0deg);
         }
-        .hex+input.paradisPerdu {
+        .hex+input {
+            margin-left: 3px;
             z-index: 100;
             border: none;
             text-align: center;
@@ -266,8 +261,9 @@ form.itemSheet {
             left: 8px;
             font-size: x-large;
             color: black;
+            background-color: transparent;
         }
-        .hex+input.paradisPerdu:focus {
+        .hex+input:focus {
             border: none;
             box-shadow: none;
         }
