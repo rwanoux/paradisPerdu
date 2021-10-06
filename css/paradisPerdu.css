@@ -1028,8 +1028,8 @@ form.itemSheet .item {
   margin: 8px;
   padding: 5px;
   padding-top: 15px;
-  -webkit-box-shadow: -10px 10px 15px black, 10px -10px 15px #0f1c36;
-  box-shadow: -10px 10px 15px black, 10px -10px 15px #0f1c36;
+  -webkit-box-shadow: -10px 10px 15px black, 10px -10px 15px rgba(15, 28, 54, 0.466);
+  box-shadow: -10px 10px 15px black, 10px -10px 15px rgba(15, 28, 54, 0.466);
   -webkit-clip-path: polygon(-20px 0px, calc(100% - 35px) 0px, 100% 50%, 100% 100%, -20px 100%);
   clip-path: polygon(-20px 0%, calc(100% - 35px) 0px, 120% 50%, 120% 150%, -20px 150%);
 }

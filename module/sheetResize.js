@@ -1,6 +1,5 @@
 export function sheetResize() {
     Hooks.on("renderparadisPerduActorSheet", async function(app, html, data) {
-        console.log(app)
         let sheet = document.getElementById(app.id);
         var ro = new ResizeObserver(entries => {
             for (let entry of entries) {
