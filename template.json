@@ -9,8 +9,8 @@
                 "profil": "profil type",
                 "mots-clefs": "",
                 "capacite": {
-                    "name": "nom de capacité",
-                    "description": "description de capacité"
+                    "name": "",
+                    "description": ""
                 }
             },
             "aptitudes": {

@@ -962,6 +962,16 @@ form.actorSheet .titre1,
 form.itemSheet .titre1 {
   padding-bottom: 8px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 100%;
   color: white;
   text-align: center;
@@ -970,27 +980,28 @@ form.itemSheet .titre1 {
   font-size: larger;
   -webkit-clip-path: polygon(0px 0px, calc(100% - 35px) 0px, 100% calc(100% - 15px), 100% 100%, 0% 100%);
   clip-path: polygon(0px 0px, calc(100% - 35px) 0px, 100% calc(100% - 15px), 100% 100%, 0% 100%);
+  margin-bottom: 5px;
 }
 
 form.actorSheet .titre1 input,
 form.itemSheet .titre1 input {
-  display: inline;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
   color: white;
-  background-color: rgba(155, 155, 155, 0.527);
-  -webkit-box-shadow: 5px 0px 15px white, -5px 0px 15px white;
-  box-shadow: 5px 0px 15px white, -5px 0px 15px white;
+  border: none;
 }
 
-form.actorSheet .titre1:after,
-form.itemSheet .titre1:after {
-  width: 35px;
-  height: 110%;
-  content: " ";
-  position: absolute;
-  right: 0;
-  top: -2px;
-  background-image: -o-linear-gradient(51deg, black, #462828, #ffffff);
-  background-image: linear-gradient(39deg, black, #462828, #ffffff);
+form.actorSheet .titre1 input:hover,
+form.itemSheet .titre1 input:hover {
+  -webkit-box-shadow: 0px 0px 15px white inset;
+  box-shadow: 0px 0px 15px white inset;
+}
+
+form.actorSheet .titre1 .titleAdd,
+form.itemSheet .titre1 .titleAdd {
+  background-color: #6e6e80;
+  margin-top: 6px;
 }
 
 form.actorSheet span.pastille,

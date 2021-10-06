@@ -88,6 +88,9 @@ form.itemSheet {
     .titre1 {
         padding-bottom: 8px;
         position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         width: 100%;
         color: white;
         text-align: center;
@@ -95,21 +98,19 @@ form.itemSheet {
         background: black;
         font-size: larger;
         clip-path: polygon(0px 0px, calc(100% - 35px) 0px, 100% calc(100% - 15px), 100% 100%, 0% 100%);
+        margin-bottom: 5px;
         input {
-            display: inline;
-            color: rgb(255, 255, 255);
-            background-color: rgba(155, 155, 155, 0.527);
-            box-shadow: 5px 0px 15px white, -5px 0px 15px white;
+            transition: 0.5s;
+            color: white;
+            border: none;
+            &:hover {
+                box-shadow: 0px 0px 15px white inset;
+            }
         }
-    }
-    .titre1:after {
-        width: 35px;
-        height: 110%;
-        content: " ";
-        position: absolute;
-        right: 0;
-        top: -2px;
-        background-image: linear-gradient(39deg, black, #462828, #ffffff);
+        .titleAdd {
+            background-color: #6e6e80;
+            margin-top: 6px;
+        }
     }
     span.pastille {
         position: relative;
@@ -195,7 +196,7 @@ form.itemSheet {
         .aptiLine:hover {
             .button {
                 transform: scale(1.3);
-                .hex > div {
+                .hex>div {
                     background-color: rgb(255, 255, 255);
                 }
             }
@@ -230,11 +231,11 @@ form.itemSheet {
             transition: 0.2s;
             overflow: hidden;
         }
-        .titre1:hover ~ .rule-tips {
+        .titre1:hover~.rule-tips {
             max-height: 150px;
         }
     }
-    .compteur > div {
+    .compteur>div {
         margin-right: 2vw;
         width: 100%;
     }
@@ -255,7 +256,7 @@ form.itemSheet {
             transition: 0.6s;
             transform: rotate(0deg);
         }
-        .hex + input.paradisPerdu {
+        .hex+input.paradisPerdu {
             z-index: 100;
             border: none;
             text-align: center;
@@ -266,7 +267,7 @@ form.itemSheet {
             font-size: x-large;
             color: black;
         }
-        .hex + input.paradisPerdu:focus {
+        .hex+input.paradisPerdu:focus {
             border: none;
             box-shadow: none;
         }
