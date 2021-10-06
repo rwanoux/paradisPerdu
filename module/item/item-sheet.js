@@ -11,7 +11,7 @@ export class paradisPerduItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["paradisPerdu", "sheet", "item"],
       width: 550,
-      height: 320,
+      height: 410,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
   }
@@ -57,12 +57,12 @@ export class paradisPerduItemSheet extends ItemSheet {
     if (!this.options.editable) return;
 
     // Roll handlers, click handlers, etc. would go here.
-   if (this.item.type==="spécialité"){
+    if (this.item.type === "spécialité") {
       let select = html.find("select");
       let apt = systemConfig.aptitude;
       select.selectedIndex = apt.indexOf(select.value);
-   }
-      
-    
+    }
+
+
   }
 }

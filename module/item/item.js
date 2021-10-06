@@ -28,7 +28,7 @@ export class paradisPerduItem extends Item {
    * Handle clickable rolls.
    * @param {Event} event   The originating click event
    * @private
-   */
+ 
   async roll() {
     // Basic template rendering data
     const token = this.actor.token;
@@ -43,5 +43,5 @@ export class paradisPerduItem extends Item {
       flavor: label
     });
   }
-
+  */
 }

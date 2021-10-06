@@ -1,33 +1,33 @@
 <form class="{{cssClass}} itemSheet" autocomplete="off">
 
+	<div class="bloque header">
+		<div class="titre1"><input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="Name"/></div>
+		<div class="relanceBox flex-row">
+			<div>
+				<input type="radio" value="1" name="data.relances" {{#ifequal data.data.relances 1}} checked {{/ifequal}}/>
+				<input type="radio" value="2" name="data.relances" {{#ifequal data.data.relances 2}} checked {{/ifequal}}/>
+				<input type="radio" value="3" name="data.relances" {{#ifequal data.data.relances 3}} checked {{/ifequal}}/>
+			</div>
+			<select name="data.aptitudeName">
+				{{#select data.data.aptitudeName}}
+					<option>-selectionner l'apitude-</option>
+					{{#each config.aptitude as |apti|}}
+						<option value="{{apti}}">{{apti}}</option>
+					{{/each}}
+				{{/select}}
+			</select>>
+		</div>
+		<div class="flexrow label">
+			<p>relances</p>
+			<p>aptitude</p>
+		</div>
+	</div>
+	<div class="bloque image">
+		<img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+	</div>
 
-
-
-    <div class="bloque">
-
-        <div class="bloque">
-            <img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-            <label class="pastille">nom </label>
-            <input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="Name" />
-        </div>
-
-        <div>
-            <label class="pastille">aptitude</label>
-
-            <select name="data.aptitudeName">
-                {{#select data.data.aptitudeName}}
-                <option>-selectionner l'apitude-</option>
-                {{#each config.aptitude as |apti|}}
-                <option value="{{apti}}">{{apti}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
-
-            <label class="pastille">relances</label>
-            <input type="number" name="data.relances" class="paradisPerdu" value="{{data.data.relances}}" placeholder="0" />
-        </div>
-
-    </div>
-
-
+	<div class=" bloque description">
+		<div class="titre1">description</div>
+		{{editor content=data.data.description target="data.data.description" button=true isOwner=isOwner editable=editable}}
+	</div>
 </form>

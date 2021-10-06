@@ -1,19 +1,38 @@
 <form class="{{cssClass}} itemSheet" autocomplete="off">
-    {{log "handlebar item-arme-sheet" this}}
-    <h1><input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="Name" /></h1>
-    <img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-    <div class="flex-row">
-        <div class="compteur ">
-            <label class="pastille">dés de dégats</label>
-            <input class="paradisPerdu" type="number" name="data.des" value="{{data.data.des}}" data-dtype="Number" />
 
+	<div class="bloque header">
+		<div class="titre1"><input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="Name"/></div>
+		<div class="relanceBox flex-row">
+			<div>
+				<input type="radio" value="1" name="data.relances" {{#ifequal data.data.relances 1}} checked {{/ifequal}}/>
+				<input type="radio" value="2" name="data.relances" {{#ifequal data.data.relances 2}} checked {{/ifequal}}/>
+				<input type="radio" value="3" name="data.relances" {{#ifequal data.data.relances 3}} checked {{/ifequal}}/>
+			</div>
+			<div class="button">
+				<div class="hex">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="hex">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<input class="paradisPerdu" type="number" data-dtype="Number" value="{{data.data.des}}" name="data.des"/>
+			</div>
+		</div>
+		<div class="flexrow label">
+			<p>relances</p>
+			<p>dégats</p>
+		</div>
 
-            <label class="pastille">relance</label>
-            <input class="paradisPerdu" type="number" name="data.relances" value="{{data.data.relances}}" data-dtype="Number" />
-        </div>
-
-    </div>
-    <section class=" bloque">
-        <label class="pastille">description</label> {{editor content=data.data.description target="data.data.description" button=true isOwner=isOwner editable=editable}}
-    </section>
+	</div>
+	<div class="bloque image">
+		<img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+	</div>
+	<div class=" bloque description">
+		<div class="titre1">description</div>
+		{{editor content=data.data.description target="data.data.description" button=true isOwner=isOwner editable=editable}}
+	</div>
 </form>

@@ -1,18 +1,20 @@
 <form class="{{cssClass}} itemSheet" autocomplete="off">
-    <div class="bloque">
-        <img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-        <label class="pastille">nom </label>
-        <input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="Name" />
-    </div>
+	<div class="bloque header">
+		<div class="titre1">NOM</div>
+		<input name="name" class=" paradisPerdu" type="text" value="{{item.name}}" placeholder="nom"/>
 
-    <div class="compteur ">
-        <label class="pastille">quantité</label>
-        <input class="paradisPerdu" type="number" name="data.type" value="{{data.data.type}}" data-dtype="Number" />
-    </div>
-    <div class="bloque">
-        <label class="pastille">description</label> {{editor content=data.data.description target="data.data.description" button=true isOwner=isOwner editable=editable}}
-    </div>
-    </div>
+		<div class="titre1">quantité</div>
+		<input class="paradisPerdu" type="number" name="data.type" value="{{data.data.type}}" data-dtype="Number"/>
+
+	</div>
+
+	<div class="bloque image ">
+		<img class="item-image rot" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
 
 
-</form>
+	</div>
+	<div class="bloque description">
+		<div class="titre1">description</div>
+		{{editor content=data.data.description target="data.description" button=true isOwner=isOwner editable=editable}}
+	</div>
+</div></form>

@@ -1,9 +1,11 @@
 {
     "Actor": {
-        "types": ["personnage", "npc"],
+        "types": [
+            "personnage",
+            "npc"
+        ],
         "personnage": {
             "informations": {
-
                 "profil": "profil type",
                 "mots-clefs": "",
                 "capacite": {
@@ -52,8 +54,6 @@
                     "value": 2,
                     "label": "viser"
                 }
-
-
             },
             "compteurs": {
                 "santé": {
@@ -68,8 +68,6 @@
                     "max": 6,
                     "min": 0
                 }
-
-
             },
             "background": {
                 "situation": {
@@ -93,18 +91,17 @@
                         "text": "",
                         "isValid": true
                     }
-
-
                 }
             },
             "notes": ""
-
         }
-
-
     },
     "Item": {
-        "types": ["objet", "arme", "spécialité"],
+        "types": [
+            "objet",
+            "arme",
+            "spécialité"
+        ],
         "objet": {
             "isObject": true,
             "description": "",
@@ -115,14 +112,12 @@
             "des": 1,
             "relances": 0,
             "description": ""
-
         },
         "spécialité": {
             "isSpé": true,
             "aptitudeName": "",
             "aptitudeValue": 0,
             "relances": 0
-
         }
     }
 }

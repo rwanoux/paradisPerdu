@@ -1,217 +1,245 @@
 <form class="{{cssClass}} actorSheet" autocomplete="off">
-    {{log "handlebar actor-sheet" this}}
+	{{log "handlebar actor-sheet" this}}
 
-    <div class="bloque infos ">
-        <div class="flex-row">
-            <div class="img-cont">
-                <img class="profile " src="{{actor.img}}" title="portrait de {{actor.name}}" data-edit="img" />
-            </div>
-            <div class="info-blok">
-                <div class="titre1">
-                    <span>INFORMATIONS</span>
-                </div>
-                <div>
-                    <input class="paradisPerdu" name="name" type="text" value="{{actor.name}}" placeholder="Name" />
-                </div>
-                <div>
-                    <input class="paradisPerdu" type="text" name="data.informations.profil" value="{{data.data.informations.profil}}" />
-                </div>
-                <div>
-                    <div class=" toChat defPro titre1" chatData="{{{data.data.informations.capacite}}}" title="clickez pour envoyer dans le chat">capacité <input type="text" name="data.informations.capacite.name" value="{{data.data.informations.capacite.name}}" data-dtype="text"></div>
+	<div class="bloque infos ">
+		<div class="flex-row">
+			<div class="img-cont">
+				<img class="profile " src="{{actor.img}}" title="portrait de {{actor.name}}" data-edit="img"/>
+			</div>
+			<div class="info-blok">
+				<div class="titre1">
+					<input class="paradisPerdu" name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+				</div>
 
-                    {{editor content=data.data.informations.capacite.description target="data.informations.capacite.description" button=true owner=owner editable=editable}}
-                </div>
-            </div>
-        </div>
-    </div>
+				<div>
+					<input class="paradisPerdu" type="text" name="data.informations.profil" value="{{data.data.informations.profil}}"/>
+				</div>
+				<div>
+					<div class=" toChat defPro titre1" chatdata="{{{data.data.informations.capacite}}}" title="clickez pour envoyer dans le chat">capacité
+						<input type="text" name="data.informations.capacite.name" value="{{data.data.informations.capacite.name}}" data-dtype="text"></div>
 
+					{{editor content=data.data.informations.capacite.description target="data.informations.capacite.description" button=true owner=owner editable=editable}}
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-    <div class="bloque aptitudes">
-        <div class="titre1" title="35 POINTS À RÉPARTIR (1 PT = 1 PT)">APTITUDES</div>
-        {{#each data.data.aptitudes as |apti id|}}
-        <div class="aptiLine">
-            <div class="line"></div>
-            <div class="aptilabel">
-                <a type="a" class="boutonApt roll" rollCF="{{id}}">{{apti.label}}</a>
-            </div>
-            <div class="button">
-                <div class="hex">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="hex">
-                    <div></div>
-                    <div> </div>
-                    <div></div>
-                </div>
-                <input class="paradisPerdu" type="number" name="data.aptitudes.{{id}}.value" value="{{apti.value}}" data-dtype="Number">
-            </div>
-        </div>
-        {{/each}}
-    </div>
+	<div class="bloque aptitudes">
+		<div class="titre1" title="35 POINTS À RÉPARTIR (1 PT = 1 PT)">APTITUDES</div>
+		{{#each data.data.aptitudes as |apti id|}}
+			<div class="aptiLine">
+				<div class="line"></div>
+				<div class="aptilabel">
+					<a type="a" class="boutonApt roll" rollcf="{{id}}">{{apti.label}}</a>
+				</div>
+				<div class="button">
+					<div class="hex">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="hex">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<input class="paradisPerdu" type="number" name="data.aptitudes.{{id}}.value" value="{{apti.value}}" data-dtype="Number">
+				</div>
+			</div>
+		{{/each}}
+	</div>
 
 
+	<div class="bloque inventaire">
+		<div class="titre1">Inventaire</div>
+		{{#each actor.items as |item id|}}
+			{{#unless item.data.data.isSpé}}
+				<div class="item flex-row" data-item-id="{{item.id}}">
+					<div class="item-controls ">
+						<a class="item-control item-edit" title="Edit Item">
+							<i class="fas fa-edit"></i>
+						</a>
+						<a class="item-control item-delete" title="Delete Item">
+							<i class="fas fa-trash"></i>
+						</a>
 
-    <div class="bloque inventaire">
-        <div class="titre1">Inventaire</div>
-        {{#each actor.items as |item id|}} {{#unless item.data.data.isSpé}}
-        <div class="item flex-row" data-item-id="{{item.id}}">
-            <div class="item-controls ">
-                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+					</div>
+					{{#if item.data.data.isArme}}
+						<div class="relanceBox flex-row">
+							{{#times item.data.data.relances}}
+								<input type="checkbox" checked disabled>
+							{{/times}}
+							{{#ifequal item.data.data.relances 1}}
+								{{#times 2}}
+									<input type="checkbox" disabled>
+								{{/times}}
+							{{/ifequal}}
+							{{#ifequal item.data.data.relances 2}}
+								<input type="checkbox" disabled>
+							{{/ifequal}}
 
-            </div>
-            {{#if item.data.data.isArme}}
-            <div class="relanceBox flex-row">
-                {{#times item.data.data.relances}}
-                <input type="checkbox" checked disabled> {{/times}} {{#ifequal item.data.data.relances 1}} {{#times 2}}
-                <input type="checkbox" disabled> {{/times}} {{/ifequal}} {{#ifequal item.data.data.relances 2}}
-                <input type="checkbox" disabled> {{/ifequal}}
+							<span class="button">
+								<div class="hex">
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+								<div class="hex">
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+								<input class="paradisPerdu" value="{{item.data.data.des}}" disabled/>
+							</span>
+						</div>
 
-                <span class="button">
-                    <div class="hex">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="hex">
-                        <div></div>
-                        <div> </div>
-                        <div></div>
-                    </div>
-                    <input
-                        class="paradisPerdu"
-                        value="{{item.data.data.des}}"
-                        disabled
-                    />
-                </span>
-            </div>
+						<div class="itemName">
+							<a class="boutondgt roll " title="jeter les dégats" rollcf="degats" rolldegats="{{item.data.data.des}}" rollspe="{{item.name}}" rollrelances="{{item.data.data.relances}}" title="lancer les dégats">
+								{{item.name}}
+							</a>
+						</div>
+					{{/if}}
+					{{#unless item.data.data.isArme}}
+						<div class="itemName">
+							<a class="toChat" chatdata="{{{item.data.data.description}}}">{{item.name}}</a>
+						</div>
+					{{/unless}}
 
-            <div class="itemName">
-                <a class="boutondgt roll " title="jeter les dégats" rollCF="degats" rollDegats="{{item.data.data.des}}" rollSpe="{{item.name}}" rollRelances="{{item.data.data.relances}}" title="lancer les dégats">
-                    {{item.name}} </a>
-            </div>
-            {{/if}} {{#unless item.data.data.isArme}}
-            <div class="itemName">
-                <a class="toChat" chatData="{{{item.data.data.description}}}">{{item.name}}</a>
-            </div>
-            {{/unless}}
+					<p>{{{item.data.data.description}}}</p>
+				</div>
 
-            <p>{{{item.data.data.description}}}</p>
-        </div>
+			{{/unless}}
+		{{/each}}
+	</div>
 
-        {{/unless}} {{/each}}
-    </div>
+	<div class="bloque specialites">
+		<div class="titre1" title="en fonction du profil">SPECIALITES</div>
 
-    <div class="bloque specialites">
-        <div class="titre1" title="en fonction du profil">SPECIALITES</div>
+		{{#each actor.items as |item id|}}
+			{{#if item.data.data.isSpé}}
+				<div class="item flex-row" data-item-id="{{item.id}}">
 
-        {{#each actor.items as |item id|}} {{#if item.data.data.isSpé}}
-        <div class="item flex-row" data-item-id="{{item.id}}">
+					<div class="item-controls ">
+						<a class="item-control item-edit" title="Edit Item">
+							<i class="fas fa-edit"></i>
+						</a>
+						<a class="item-control item-delete" title="Delete Item">
+							<i class="fas fa-trash"></i>
+						</a>
+					</div>
+					<div class="relanceBox">
+						{{#times item.data.data.relances}}
+							<input type="checkbox" checked disabled>
+						{{/times}}
+						{{#ifequal item.data.data.relances 1}}
+							{{#times 2}}
+								<input type="checkbox" disabled>
+							{{/times}}
+						{{/ifequal}}
+						{{#ifequal item.data.data.relances 2}}
+							<input type="checkbox" disabled>
+						{{/ifequal}}
 
-            <div class="item-controls ">
-                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-            </div>
-            <div class="relanceBox">
-                {{#times item.data.data.relances}}
-                <input type="checkbox" checked disabled> {{/times}} {{#ifequal item.data.data.relances 1}} {{#times 2}}
-                <input type="checkbox" disabled> {{/times}} {{/ifequal}} {{#ifequal item.data.data.relances 2}}
-                <input type="checkbox" disabled> {{/ifequal}}
+					</div>
+					<div class="itemName">
+						<a type="a" class="aptiLabel roll boutonSpe " rollcf="{{item.data.data.aptitudeName}}" rollspe="{{item.name}}" rollrelances="{{item.data.data.relances}}">{{item.name}}</a>
+					</div>
 
-            </div>
-            <div class="itemName">
-                <a type="a" class="aptiLabel roll boutonSpe " rollCF="{{item.data.data.aptitudeName}}" rollSpe="{{item.name}}" rollRelances="{{item.data.data.relances}}">{{item.name}}</a>
-            </div>
-
-            <div>
-                <span class="itemApti"> {{item.data.data.aptitudeName}} </span>
-            </div>
-
-
-        </div>
-        {{/if}} {{/each}}
-
-    </div>
-
-    <div class="bloque compteur ">
-        {{#each data.data.compteurs as |compt id|}}
-        <div>
-            <div class="titre1">{{compt.label}} </div>
-
-            <div class="button">
-                <div class="hex">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="hex">
-                    <div></div>
-                    <div> </div>
-                    <div></div>
-                </div>
-                <input type="number" class="paradisPerdu" name="data.compteurs.{{id}}.value" min="0" max="6" value="{{compt.value}}" data-dtype="Number">
-            </div>
-
+					<div>
+						<span class="itemApti">
+							{{item.data.data.aptitudeName}}
+						</span>
+					</div>
 
 
-            {{#ifequal compt.label "santé"}}
-            <div class="rule-tips">
-                <p>À 2 : +1 RÉUSSITE EXIGÉE </p>
-                <p>À 1 : +2 RÉUSSITES EXIGÉES</p>
-                <p>À 0 : INCONSCIENT. AGONIE 1D TOURS : ENDURER/4</p>
-            </div>
-            {{/ifequal}} {{#ifequal compt.label "adrenaline"}}
-            <div class="rule-tips">
+				</div>
+			{{/if}}
+		{{/each}}
 
-                <p> RÉUSSITE : +1 RÉUSSITE AUTOMATIQUE</p>
-                <p>CAPACITÉ : UTILISATION DE LA CAPACITÉ UNE FOIS PAR « PARTIE »</p>
-            </div>
-            {{/ifequal}}
+	</div>
 
+	<div class="bloque compteur ">
+		{{#each data.data.compteurs as |compt id|}}
+			<div>
+				<div class="titre1">{{compt.label}}
+				</div>
 
-        </div>
-        {{/each}}
-
-
-    </div>
-    <div class="situation bloque">
-        <h2 class="titre1">situation</h2>
-        {{editor content=data.data.background.situation.text target="data.background.situation.text" button=true owner=owner editable=editable}}
-    </div>
-    <div class="secret bloque">
-        <h2 class="titre1">secret</h2>
-        {{editor content=data.data.background.secret.text target="data.background.secret.text" button=true owner=owner editable=editable}}
-
-    </div>
-    <div class="objectifs bloque">
-        <h2 class="titre1">objectifs</h2>
+				<div class="button">
+					<div class="hex">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="hex">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<input type="number" class="paradisPerdu" name="data.compteurs.{{id}}.value" min="0" max="6" value="{{compt.value}}" data-dtype="Number">
+				</div>
 
 
+				{{#ifequal compt.label "santé"}}
+					<div class="rule-tips">
+						<p>À 2 : +1 RÉUSSITE EXIGÉE
+						</p>
+						<p>À 1 : +2 RÉUSSITES EXIGÉES</p>
+						<p>À 0 : INCONSCIENT. AGONIE 1D TOURS : ENDURER/4</p>
+					</div>
+				{{/ifequal}}
+				{{#ifequal compt.label "adrenaline"}}
+					<div class="rule-tips">
 
-        <div class="flex-row flex-center">
+						<p>
+							RÉUSSITE : +1 RÉUSSITE AUTOMATIQUE</p>
+						<p>CAPACITÉ : UTILISATION DE LA CAPACITÉ UNE FOIS PAR « PARTIE »</p>
+					</div>
+				{{/ifequal}}
 
-            <input type="checkbox" name="data.background.objectifs.obj1.isValid" {{checked data.data.background.objectifs.obj1.isValid}}> {{editor content=data.data.background.objectifs.obj1.text target="data.background.objectifs.obj1.text" button=true
+
+			</div>
+		{{/each}}
+
+
+	</div>
+	<div class="situation bloque">
+		<h2 class="titre1">situation</h2>
+		{{editor content=data.data.background.situation.text target="data.background.situation.text" button=true owner=owner editable=editable}}
+	</div>
+	<div class="secret bloque">
+		<h2 class="titre1">secret</h2>
+		{{editor content=data.data.background.secret.text target="data.background.secret.text" button=true owner=owner editable=editable}}
+
+	</div>
+	<div class="objectifs bloque">
+		<h2 class="titre1">objectifs</h2>
+
+
+		<div class="flex-row flex-center">
+
+			<input type="checkbox" name="data.background.objectifs.obj1.isValid" {{checked data.data.background.objectifs.obj1.isValid}}>
+			{{editor content=data.data.background.objectifs.obj1.text target="data.background.objectifs.obj1.text" button=true
             isOwner=isOwner editable=editable}}
-        </div>
-        <div class="flex-row flex-center">
+		</div>
+		<div class="flex-row flex-center">
 
-            <input type="checkbox" name="data.background.objectifs.obj2.isValid" {{checked data.data.background.objectifs.obj2.isValid}}> {{editor content=data.data.background.objectifs.obj2.text target="data.background.objectifs.obj2.text" button=true
+			<input type="checkbox" name="data.background.objectifs.obj2.isValid" {{checked data.data.background.objectifs.obj2.isValid}}>
+			{{editor content=data.data.background.objectifs.obj2.text target="data.background.objectifs.obj2.text" button=true
             isOwner=isOwner editable=editable}}
-        </div>
-        <div class="flex-row flex-center">
+		</div>
+		<div class="flex-row flex-center">
 
-            <input type="checkbox" name="data.background.objectifs.obj3.isValid" {{checked data.data.background.objectifs.obj3.isValid}}> {{editor content=data.data.background.objectifs.obj3.text target="data.background.objectifs.obj3.text" button=true
+			<input type="checkbox" name="data.background.objectifs.obj3.isValid" {{checked data.data.background.objectifs.obj3.isValid}}>
+			{{editor content=data.data.background.objectifs.obj3.text target="data.background.objectifs.obj3.text" button=true
             isOwner=isOwner editable=editable}}
-        </div>
-    </div>
-    <div class="notes bloque">
-        <h2 class="titre1">notes</h2>
-        {{editor content=data.data.notes target="data.notes" button=true isOwner=isOwner editable=editable}}
+		</div>
+	</div>
+	<div class="notes bloque">
+		<h2 class="titre1">notes</h2>
+		{{editor content=data.data.notes target="data.notes" button=true isOwner=isOwner editable=editable}}
 
 
-    </div>
+	</div>
 
 </form>

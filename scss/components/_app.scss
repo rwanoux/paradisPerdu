@@ -1,332 +1,332 @@
- body {
-     width: 100vw;
-     height: 100vh;
-     margin: 0;
-     overflow: hidden;
-     background-repeat: no-repeat;
-     background-position: center;
-     background-size: cover;
-     font-family: "Ddin", sans-serif;
-     font-size: 18px;
-     box-shadow: 0 0 50vw #000 inset;
- }
- 
- h1,
- h2,
- h3 {
-     font-family: 'aileron';
-     font-size: larger
- }
- 
- h4,
- h5,
- h6 {
-     font-family: 'built';
- }
- 
- .tox.tox-tinymce {
-     min-height: 80px;
- }
- 
- .editor {
-     min-height: 80px;
-     max-height: 200px;
-     min-width: 200px
- }
- 
- #logo {
-     position: relative;
- }
- 
- div#sidebar.collapsed {
-     top: 1%;
-     height: max-content;
-     position: fixed;
-     right: 0%;
-     height: 45%;
-     #sidebar-tabs {
-         flex: auto
-     }
- }
- 
- #token-hud {
-     .control-icon {
-         margin: unset;
-         border-radius: unset;
-         border: 1px solid #0069ff;
-         opacity: 0.6;
-         &:hover {
-             opacity: 1
-         }
-         img {
-             opacity: 0.6;
-             &:hover {
-                 opacity: 1
-             }
-         }
-     }
- }
- 
- #sidebar,
- #sidebar.collapsed {
-     background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
-     background-position: 55% 50%;
-     background-size: 500% 100%;
-     #sidebar-tabs {
-         border-bottom: 1px solid #0069ff;
-         box-shadow: 0 0 10px #5b00ff;
-         .item {
-             border: 1px solid #00c8ff54;
-             box-shadow: 0 0 6px inset #0084ff67;
-             &:hover {
-                 color: #00c9ff
-             }
-         }
-         .item.active {
-             border: 1px solid #00c9ff;
-             box-shadow: 0 0 6px inset #0085ff;
-         }
-     }
-     #settings h2 {
-         border-top: 2px solid white;
-         border-bottom: 2px solid white;
-         font-size: larger;
-         background: linear-gradient( rgba(100, 45, 45, 0.301), rgba(38, 38, 87, 0.5));
-     }
- }
- 
- #chat-log {
-     border: 2px black solid;
-     list-style-position: inside;
- }
- 
- #board {
-     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 100px rgba(255, 255, 255, 0.6) inset;
- }
- 
- #navigation {
-     #nav-toggle {
-         border: none;
-         clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-         background: #9198e5;
-         box-shadow: 0px 0px 15px black inset;
-     }
-     #scene-list {
-         .scene {
-             .scene-name {
-                 font-family: aileron;
-             }
-             background: #3e4166;
-             border: none
-         }
-         .scene.gm {
-             border: none;
-             box-shadow: 0px 20px 15px #8c3e3e inset;
-         }
-         .scene.view {
-             box-shadow: 0px 20px 15px #3e4c8c inset;
-             border-bottom: 3px solid rgb(206, 221, 0);
-         }
-         .scene.view.gm {
-             box-shadow: 0px 20px 15px #8c3e3e inset;
-             border-bottom: 3px solid rgb(206, 221, 0);
-         }
-         .scene {
-             box-shadow: 0px 20px 15px #3e4c8c inset;
-         }
-         .scene.active,
-         .scen.view.active {
-             border: none;
-             box-shadow: 0px 20px 15px #3e8c3e inset;
-         }
-     }
- }
- 
- #context-menu {
-     padding: 8px 0px;
-     color: black;
-     background: rgb(197, 197, 197);
-     ol.context-items {
-         text-align: center;
-         li.context-item {
-             transition: 0.2s;
-             border-bottom: 1px solid white;
-             box-shadow: 0px 0px 15px black;
-             &:hover {
-                 color: rgb(0, 30, 70);
-                 box-shadow: 0px 0px 15px rgb(139, 139, 139);
-                 text-shadow: 0 0 4px rgb(29, 61, 80);
-             }
-         }
-     }
- }
- 
- #controls {
-     ol {
-         .scene-control,
-         .control-tool {
-             color: rgb(90, 90, 90);
-             background: rgb(197, 197, 197);
-             &.active,
-             &:hover {
-                 color: black;
-                 border: 2px solid rgb(239, 248, 116);
-                 box-shadow: 0px 0px 5px white;
-             }
-             &.toggle {
-                 background: rgb(173, 173, 173);
-                 &:hover,
-                 &.active {
-                     box-shadow: 0px 0px 5px rgb(239, 248, 116) inset;
-                 }
-                 &.active {
-                     background: rgb(239, 248, 116);
-                 }
-             }
-         }
-     }
- }
- 
- #players {
-     color: black;
-     background: rgb(197, 197, 197);
-     ol#player-list {
-         padding: 5px;
-         text-align: center;
-         li {
-             color: black;
-             transition: 0.2s;
-             border-bottom: 1px solid white;
-             &:hover {
-                 color: rgb(0, 30, 70);
-                 text-shadow: 0 0 4px rgb(63, 185, 255);
-             }
-             span.player-name {
-                 color: rgb(0, 0, 0);
-                 &.self {
-                     border-bottom: 1px solid black
-                 }
-             }
-         }
-     }
- }
- 
- #menu {
-     color: black;
-     background: rgb(197, 197, 197);
-     border-radius: none;
-     padding: 20px;
-     box-shadow: 0px 0px 30px black inset;
-     #menu-items {
-         li h4 {
-             border-bottom: 1px solid black
-         }
-     }
- }
- 
- #hotbar {
-     .bar-controls {
-         color: black;
-         background: rgb(197, 197, 197);
-         font-size: small;
-     }
-     .macro {
-         color: black;
-         background: rgba(197, 197, 197, 0.527);
-         .macro-key {
-             font-family: aileron;
-             font-weight: lighter;
-             background-color: #9198e5;
-             color: black
-         }
-     }
- }
- 
- .app:not(#navigation, #players, .control-tools, #hotbar) {
-     box-shadow: 0px 0px 60px rgba(0, 0, 49, 0.788);
- }
- 
- .window-app {
-     .window-header {
-         font-family: built;
-         font-weight: lighter;
-         background: url(../img/ParadisPerdu_fond_sanstitre.jpg);
-         color: rgb(255, 255, 255);
-         background-size: cover;
-         box-shadow: 0px -5px 20px rgb(187, 187, 187) inset;
-     }
-     .window-content {
-         background-image: unset;
-     }
- }
- 
- #pause {
-     width: 10vw;
-     height: 10vw;
-     position: fixed;
-     bottom: 50vh;
-     left: 45vw;
-     pointer-events: none;
-     z-index: var(--z-index-ui);
-     display: none;
-     background: unset;
-     h3 {
-         color: rgb(255, 242, 166);
-         font-size: xx-large;
-         text-shadow: 0px 0px 15px black;
-     }
-     img {
-         opacity: 1;
-         content: url('../img/pause.png');
-         border: none;
-         animation: rotation 15s infinite cubic-bezier(.3, 1.83, .48, -1);
-         top: 0
-     }
- }
- 
- .window-app .window-content {
-     display: -webkit-box;
-     display: -ms-flexbox;
-     display: flex;
-     -webkit-box-orient: vertical;
-     -webkit-box-direction: normal;
-     -ms-flex-direction: column;
-     flex-direction: column;
-     -ms-flex-wrap: nowrap;
-     flex-wrap: nowrap;
-     -webkit-box-pack: start;
-     -ms-flex-pack: start;
-     justify-content: flex-start;
-     padding: 12px;
-     color: #000000;
-     overflow-y: auto;
-     overflow-x: hidden;
-     background: url(../img/fondTemp.png);
-     background-size: cover;
- }
- 
- #client-settings section.content .submenu>button,
- form button,
- button:not(.file-picker,
- .grid-config) {
-     background: linear-gradient(#919191, #a0aeb3);
-     clip-path: polygon(0px 20px, 0px 0px, calc(100% - 20px) 0px, 100% calc(100% - 20px), 100% 100%, 0% 100%);
-     cursor: pointer;
-     border: none;
-     transition: 0.2s;
-     border: none;
-     &:hover,
-     &:focus {
-         background: linear-gradient(#ffd1d173, #9da5ff);
-     }
- }
- 
- select {
-     background: -webkit-gradient(linear, left top, left bottom, from(#ffd1d173), to(#9198e5));
-     background: -o-linear-gradient(#ffd1d173, #9198e5);
-     background: linear-gradient(#ffd1d173, #e4e4e4);
-     option {
-         color: wheat;
-         background-color: rgb(28, 61, 92)
-     }
- }
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: "Ddin", sans-serif;
+    font-size: 18px;
+    box-shadow: 0 0 50vw #000 inset;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "aileron";
+    font-size: larger;
+}
+
+h4,
+h5,
+h6 {
+    font-family: "built";
+}
+
+.tox.tox-tinymce {
+    min-height: 80px;
+}
+
+.editor {
+    min-height: 80px;
+    max-height: 200px;
+    min-width: 200px;
+}
+
+#logo {
+    position: relative;
+}
+
+div#sidebar.collapsed {
+    top: 1%;
+    height: max-content;
+    position: fixed;
+    right: 0%;
+    height: 45%;
+    #sidebar-tabs {
+        flex: auto;
+    }
+}
+
+#token-hud {
+    .control-icon {
+        margin: unset;
+        border-radius: unset;
+        border: 1px solid #0069ff;
+        opacity: 0.6;
+        &:hover {
+            opacity: 1;
+        }
+        img {
+            opacity: 0.6;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#sidebar,
+#sidebar.collapsed {
+    background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+    background-position: 55% 50%;
+    background-size: 500% 100%;
+    #sidebar-tabs {
+        border-bottom: 1px solid #0069ff;
+        box-shadow: 0 0 10px #5b00ff;
+        .item {
+            border: 1px solid #00c8ff54;
+            box-shadow: 0 0 6px inset #0084ff67;
+            &:hover {
+                color: #00c9ff;
+            }
+        }
+        .item.active {
+            border: 1px solid #00c9ff;
+            box-shadow: 0 0 6px inset #0085ff;
+        }
+    }
+    #settings h2 {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        font-size: larger;
+        background: linear-gradient(rgba(100, 45, 45, 0.301), rgba(38, 38, 87, 0.5));
+    }
+}
+
+#chat-log {
+    border: 2px black solid;
+    list-style-position: inside;
+}
+
+#board {
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 100px rgba(255, 255, 255, 0.6) inset;
+}
+
+#navigation {
+    #nav-toggle {
+        border: none;
+        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        background: #9198e5;
+        box-shadow: 0px 0px 15px black inset;
+    }
+    #scene-list {
+        .scene {
+            .scene-name {
+                font-family: aileron;
+            }
+            background: #3e4166;
+            border: none;
+        }
+        .scene.gm {
+            border: none;
+            box-shadow: 0px 20px 15px #8c3e3e inset;
+        }
+        .scene.view {
+            box-shadow: 0px 20px 15px #3e4c8c inset;
+            border-bottom: 3px solid rgb(206, 221, 0);
+        }
+        .scene.view.gm {
+            box-shadow: 0px 20px 15px #8c3e3e inset;
+            border-bottom: 3px solid rgb(206, 221, 0);
+        }
+        .scene {
+            box-shadow: 0px 20px 15px #3e4c8c inset;
+        }
+        .scene.active,
+        .scen.view.active {
+            border: none;
+            box-shadow: 0px 20px 15px #3e8c3e inset;
+        }
+    }
+}
+
+#context-menu {
+    padding: 8px 0px;
+    color: black;
+    background: rgb(197, 197, 197);
+    ol.context-items {
+        text-align: center;
+        li.context-item {
+            transition: 0.2s;
+            border-bottom: 1px solid white;
+            box-shadow: 0px 0px 15px black;
+            &:hover {
+                color: rgb(0, 30, 70);
+                box-shadow: 0px 0px 15px rgb(139, 139, 139);
+                text-shadow: 0 0 4px rgb(29, 61, 80);
+            }
+        }
+    }
+}
+
+#controls {
+    ol {
+        .scene-control,
+        .control-tool {
+            color: rgb(90, 90, 90);
+            background: rgb(197, 197, 197);
+            &.active,
+            &:hover {
+                color: black;
+                border: 2px solid rgb(239, 248, 116);
+                box-shadow: 0px 0px 5px white;
+            }
+            &.toggle {
+                background: rgb(173, 173, 173);
+                &:hover,
+                &.active {
+                    box-shadow: 0px 0px 5px rgb(239, 248, 116) inset;
+                }
+                &.active {
+                    background: rgb(239, 248, 116);
+                }
+            }
+        }
+    }
+}
+
+#players {
+    color: black;
+    background: rgb(197, 197, 197);
+    ol#player-list {
+        padding: 5px;
+        text-align: center;
+        li {
+            color: black;
+            transition: 0.2s;
+            border-bottom: 1px solid white;
+            &:hover {
+                color: rgb(0, 30, 70);
+                text-shadow: 0 0 4px rgb(63, 185, 255);
+            }
+            span.player-name {
+                color: rgb(0, 0, 0);
+                &.self {
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}
+
+#menu {
+    color: black;
+    background: rgb(197, 197, 197);
+    border-radius: none;
+    padding: 20px;
+    box-shadow: 0px 0px 30px black inset;
+    #menu-items {
+        li h4 {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+#hotbar {
+    .bar-controls {
+        color: black;
+        background: rgb(197, 197, 197);
+        font-size: small;
+    }
+    .macro {
+        color: black;
+        background: rgba(197, 197, 197, 0.527);
+        .macro-key {
+            font-family: aileron;
+            font-weight: lighter;
+            background-color: #9198e5;
+            color: black;
+        }
+    }
+}
+
+.app:not(#navigation, #players, .control-tools, #hotbar) {
+    box-shadow: 0px 0px 60px rgba(0, 0, 49, 0.788);
+}
+
+.window-app {
+    .window-header {
+        font-family: built;
+        font-weight: lighter;
+        background: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+        color: rgb(255, 255, 255);
+        background-size: cover;
+        box-shadow: 0px -5px 20px rgb(187, 187, 187) inset;
+    }
+    .window-content {
+        background-image: unset;
+    }
+}
+
+#pause {
+    width: 10vw;
+    height: 10vw;
+    position: fixed;
+    bottom: 50vh;
+    left: 45vw;
+    pointer-events: none;
+    z-index: var(--z-index-ui);
+    display: none;
+    background: unset;
+    h3 {
+        color: rgb(255, 242, 166);
+        font-size: xx-large;
+        text-shadow: 0px 0px 15px black;
+    }
+    img {
+        opacity: 1;
+        content: url("../img/pause.png");
+        border: none;
+        animation: rotation 15s infinite cubic-bezier(0.3, 1.83, 0.48, -1);
+        top: 0;
+    }
+}
+
+.window-app .window-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding: 12px;
+    color: #000000;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: url(../img/fondTemp.png);
+    background-size: cover;
+}
+.dialog .dialog-buttons button.default,
+.dialog .dialog-buttons button,
+#client-settings section.content .submenu > button,
+form button,
+button:not(.file-picker, .grid-config) {
+    background: linear-gradient(#919191, #a0aeb3);
+    clip-path: polygon(0px 20px, 0px 0px, calc(100% - 20px) 0px, 100% calc(100% - 20px), 100% 100%, 0% 100%);
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+    border: none;
+    &:hover,
+    &:focus {
+        background: linear-gradient(#ffd1d173, #9da5ff);
+    }
+}
+
+select {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffd1d173), to(#9198e5));
+    background: -o-linear-gradient(#ffd1d173, #9198e5);
+    background: linear-gradient(#ffd1d173, #e4e4e4);
+    option {
+        color: wheat;
+        background-color: rgb(28, 61, 92);
+    }
+}
