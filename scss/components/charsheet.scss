@@ -368,6 +368,9 @@ form.itemSheet {
             box-shadow: 0px 0px 5px black;
             input[type="checkbox"] {
                 transform: scale(2);
+                border: none;
+                color: rgb(0, 41, 0);
+                background-color: transparent;
             }
         }
     }

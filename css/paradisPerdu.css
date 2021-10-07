@@ -1416,6 +1416,9 @@ form.itemSheet .objectifs .flex-row input[type="checkbox"] {
   -webkit-transform: scale(2);
   -ms-transform: scale(2);
   transform: scale(2);
+  border: none;
+  color: #002900;
+  background-color: transparent;
 }
 
 form.actorSheet .notes,

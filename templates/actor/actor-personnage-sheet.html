@@ -30,9 +30,9 @@
         <div class="titre1 " title="35 POINTS À RÉPARTIR (1 PT=1 PT) ">APTITUDES</div>
         {{#each data.data.aptitudes as |apti id|}}
         <div class="aptiLine ">
-            <div class="line "></div>
+            <div class="line"></div>
             <div class="aptilabel ">
-                <a type="a " class="boutonApt roll " rollcf="{{id}} ">{{apti.label}}</a>
+                <a type="a" class="boutonApt roll" rollcf="{{id}}">{{apti.label}}</a>
             </div>
             <div class="button ">
                 <div class="hex ">
@@ -45,7 +45,7 @@
                     <div></div>
                     <div></div>
                 </div>
-                <input type="number " name="data.aptitudes.{{id}}.value " value="{{apti.value}} " data-dtype="Number ">
+                <input type="number " name="data.aptitudes.{{id}}.value" value="{{apti.value}}" data-dtype="Number ">
             </div>
         </div>
         {{/each}}
@@ -55,7 +55,7 @@
     <div class="bloque inventaire ">
         <div class="titre1 ">Inventaire</div>
         {{#each actor.items as |item id|}} {{#unless item.data.data.isSpé}}
-        <div class="item flex-row " data-item-id="{{item.id}} ">
+        <div class="item flex-row " data-item-id="{{item.id}}">
             <div class="item-controls ">
                 <a class="item-control item-edit " title="Edit Item ">
                     <i class="fas fa-edit "></i>
@@ -84,20 +84,20 @@
                         <div></div>
                     </div>
                     <input
-                        value="{{item.data.data.des}} "
+                        value="{{item.data.data.des}}"
                         disabled
                     />
                 </span>
             </div>
 
             <div class="itemName ">
-                <a class="boutondgt roll " title="jeter les dégats " rollcf="degats " rolldegats="{{item.data.data.des}} " rollspe="{{item.name}} " rollrelances="{{item.data.data.relances}} " title="lancer les dégats ">
+                <a class="boutondgt roll " title="jeter les dégats " rollcf="degats " rolldegats="{{item.data.data.des}}" rollspe="{{item.name}}" rollrelances="{{item.data.data.relances}}" title="lancer les dégats ">
                     {{item.name}}
                 </a>
             </div>
             {{/if}} {{#unless item.data.data.isArme}}
             <div class="itemName ">
-                <a class="toChat " chatdata="{{{item.data.data.description}}} ">{{item.name}}</a>
+                <a class="toChat " chatdata="{{{item.data.data.description}}}">{{item.name}}</a>
             </div>
             {{/unless}}
 
@@ -108,14 +108,14 @@
     </div>
 
     <div class="bloque specialites ">
-        <div class="titre1 " title="en fonction du profil ">SPECIALITES</div>
+        <div class="titre1 " title="en fonction du profil">SPECIALITES</div>
         <div class=" flex-row">
             <div>relance</div>
             <div>spécialité</div>
             <div>aptitude</div>
         </div>
         {{#each actor.items as |item id|}} {{#if item.data.data.isSpé}}
-        <div class="item flex-row " data-item-id="{{item.id}} ">
+        <div class="item flex-row " data-item-id="{{item.id}}">
 
             <div class="item-controls ">
                 <a class="item-control item-edit " title="Edit Item ">
@@ -133,7 +133,7 @@
 
             </div>
             <div class="itemName ">
-                <a type="a " class="aptiLabel roll boutonSpe " rollcf="{{item.data.data.aptitudeName}} " rollspe="{{item.name}} " rollrelances="{{item.data.data.relances}} ">{{item.name}}</a>
+                <a type="a" class="aptiLabel roll boutonSpe" rollcf="{{item.data.data.aptitudeName}}" rollspe="{{item.name}}" rollrelances="{{item.data.data.relances}}">{{item.name}}</a>
             </div>
 
             <div class="titleAdd">
@@ -165,7 +165,7 @@
                     <div></div>
                     <div></div>
                 </div>
-                <input type="number " name="data.compteurs.{{id}}.value " min="0 " max="6 " value="{{compt.value}} " data-dtype="Number ">
+                <input type="number " name="data.compteurs.{{id}}.value " min="0 " max="6 " value="{{compt.value}}" data-dtype="Number ">
             </div>
 
 
@@ -204,19 +204,29 @@
         <h2 class="titre1 ">objectifs</h2>
 
 
-        <div class="flex-row flex-center ">
-
-            <input type="checkbox" name="data.background.objectifs.obj1.isValid " {{checked data.data.background.objectifs.obj1.isValid}}> {{editor content=data.data.background.objectifs.obj1.text target="data.background.objectifs.obj1.text " button=true
-            isOwner=isOwner editable=editable}}
+        <div class="flex-row ">
+            <div class="button ">
+                <div class="hex ">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="hex ">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <input type="checkbox" name="data.background.objectifs.obj1.isValid" {{checked data.data.background.objectifs.obj1.isValid}}>
+            </div>
+            {{editor content=data.data.background.objectifs.obj1.text target="data.background.objectifs.obj1.text" button=true isOwner=isOwner editable=editable}}
         </div>
         <div class="flex-row flex-center ">
 
-            <input type="checkbox" name="data.background.objectifs.obj2.isValid " {{checked data.data.background.objectifs.obj2.isValid}}> {{editor content=data.data.background.objectifs.obj2.text target="data.background.objectifs.obj2.text " button=true
-            isOwner=isOwner editable=editable}}
+            {{editor content=data.data.background.objectifs.obj2.text target="data.background.objectifs.obj2.text" button=true isOwner=isOwner editable=editable}}
         </div>
         <div class="flex-row flex-center ">
 
-            <input type="checkbox" name="data.background.objectifs.obj3.isValid " {{checked data.data.background.objectifs.obj3.isValid}}> {{editor content=data.data.background.objectifs.obj3.text target="data.background.objectifs.obj3.text " button=true
+            <input type="checkbox" name="data.background.objectifs.obj3.isValid" {{checked data.data.background.objectifs.obj3.isValid}}> {{editor content=data.data.background.objectifs.obj3.text target="data.background.objectifs.obj3.text " button=true
             isOwner=isOwner editable=editable}}
         </div>
     </div>

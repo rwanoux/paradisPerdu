@@ -17,8 +17,8 @@ export class paradisPerduActorSheet extends ActorSheet {
         return mergeObject(super.defaultOptions, {
             classes: ["paradisPerdu", "sheet", "actor"],
             template: "systems/paradisPerdu/templates/actor/actor-personnage-sheet.html",
-            width: 1160,
-            height: 850,
+            width: 620,
+            height: 830,
             tabs: [{
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",
@@ -75,18 +75,16 @@ export class paradisPerduActorSheet extends ActorSheet {
 
         // Update Inventory Item
         html.find('.item-edit').click(ev => {
-            const el = ev.currentTarget.closest(".item");
-            console.log(el.getAttribute("data-item-id"))
-            console.log(this.actor.getEmbeddedCollection("paradisPerduItem"))
-            const item = this.actor.getEmbeddedDocument('Item', el.getAttribute("data-item-id"));
-            console.log(item)
+            let el = ev.currentTarget.closest(".item");
+            let item = this.actor.items.get(el.getAttribute("data-item-id"));
+            item.sheet.render(true)
         });
 
         // Delete Inventory Item
         html.find('.item-delete').click(ev => {
-            const li = ev.currentTarget.closest(".item");
-            this.actor.deleteEmbeddedDocuments('Item', [li.data("itemId")]);
-            li.slideUp(200, () => this.render(false));
+            let el = ev.currentTarget.closest(".item");
+            let item = this.actor.items.get(el.getAttribute("data-item-id"));
+            this.actor.deleteEmbeddedDocuments("Item", [el.getAttribute("data-item-id")]);
         });
 
         // Rollable abilities.
@@ -114,14 +112,12 @@ export class paradisPerduActorSheet extends ActorSheet {
 
         html.find(".boutonSpe").click(ev => {
             let apt = ev.target.getAttribute("rollCF");
-            console.log(apt);
             let spe = ev.target.getAttribute("rollSpe");
             let relanceDispo = ev.target.getAttribute("rollRelances");
             rollCF(actor, apt, relanceDispo, spe);
         });
         html.find(".boutondgt").click(ev => {
             let apt = ev.target.getAttribute("rollCF");
-            console.log(apt);
             let spe = ev.target.getAttribute("rollSpe");
             let dgt = ev.target.getAttribute("rollDegats");
             let relanceDispo = ev.target.getAttribute("rollRelances");
