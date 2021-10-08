@@ -174,6 +174,25 @@ h6 {
   min-width: 200px;
 }
 
+.editor .editor-edit {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.editor .editor-edit:hover {
+  color: black;
+}
+
+.sheet .editor-content * {
+  height: 100%;
+  overflow-y: auto;
+  word-break: break-word;
+  font-size: small;
+}
+
 #logo {
   position: relative;
 }
@@ -276,8 +295,11 @@ div#sidebar.collapsed #sidebar-tabs {
 }
 
 #navigation #scene-list .scene {
-  background: #3e4166;
+  background: url(../img/ParadisPerdu_fond_sanstitre.jpg) !important;
+  background-size: cover !important;
   border: none;
+  -webkit-box-shadow: 20px 10px 15px #3e8c5cbf inset;
+  box-shadow: 20px 10px 15px #3e8c5cbf inset;
 }
 
 #navigation #scene-list .scene .scene-name {
@@ -286,32 +308,28 @@ div#sidebar.collapsed #sidebar-tabs {
 
 #navigation #scene-list .scene.gm {
   border: none;
-  -webkit-box-shadow: 0px 20px 15px #8c3e3e inset;
-  box-shadow: 0px 20px 15px #8c3e3e inset;
+  -webkit-box-shadow: 20px 10px 15px #8c3e3ebf inset;
+  box-shadow: 20px 10px 15px #8c3e3ebf inset;
 }
 
-#navigation #scene-list .scene.view {
-  -webkit-box-shadow: 0px 20px 15px #3e4c8c inset;
-  box-shadow: 0px 20px 15px #3e4c8c inset;
-  border-bottom: 3px solid #cedd00;
-}
-
-#navigation #scene-list .scene.view.gm {
-  -webkit-box-shadow: 0px 20px 15px #8c3e3e inset;
-  box-shadow: 0px 20px 15px #8c3e3e inset;
-  border-bottom: 3px solid #cedd00;
-}
-
-#navigation #scene-list .scene {
-  -webkit-box-shadow: 0px 20px 15px #3e4c8c inset;
-  box-shadow: 0px 20px 15px #3e4c8c inset;
-}
-
-#navigation #scene-list .scene.active,
-#navigation #scene-list .scen.view.active {
+#navigation #scene-list .scene.view,
+#navigation #scene-list .scene.view.active {
   border: none;
-  -webkit-box-shadow: 0px 20px 15px #3e8c3e inset;
-  box-shadow: 0px 20px 15px #3e8c3e inset;
+  border-left: 6px solid #cedd00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#navigation #scene-list .scene.active {
+  border: none;
+  -webkit-box-shadow: 20px 10px 15px #8c843ebf inset;
+  box-shadow: 20px 10px 15px #8c843ebf inset;
+}
+
+#navigation #scene-list .context {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
 }
 
 #context-menu {
@@ -340,36 +358,41 @@ div#sidebar.collapsed #sidebar-tabs {
   text-shadow: 0 0 4px #1d3d50;
 }
 
-#controls ol .scene-control,
-#controls ol .control-tool {
+#controls .scene-control,
+#controls .control-tool {
   color: #5a5a5a;
   background: #c5c5c5;
 }
 
-#controls ol .scene-control.active, #controls ol .scene-control:hover,
-#controls ol .control-tool.active,
-#controls ol .control-tool:hover {
+#controls .scene-control.active, #controls .scene-control:hover,
+#controls .control-tool.active,
+#controls .control-tool:hover {
   color: black;
   border: 2px solid #eff874;
   -webkit-box-shadow: 0px 0px 5px white;
   box-shadow: 0px 0px 5px white;
 }
 
-#controls ol .scene-control.toggle,
-#controls ol .control-tool.toggle {
-  background: #adadad;
+#controls .scene-control.toggle,
+#controls .control-tool.toggle {
+  background: #6b6b6b;
+  border: 2px solid black;
 }
 
-#controls ol .scene-control.toggle:hover, #controls ol .scene-control.toggle.active,
-#controls ol .control-tool.toggle:hover,
-#controls ol .control-tool.toggle.active {
+#controls .scene-control.toggle:hover,
+#controls .control-tool.toggle:hover {
+  background: #919191;
+  border: 2px solid #8f8e8e;
+  -webkit-box-shadow: 0px 0px 5px #7d8061 inset;
+  box-shadow: 0px 0px 5px #7d8061 inset;
+}
+
+#controls .scene-control.toggle.active,
+#controls .control-tool.toggle.active {
+  background: #c5c5c5;
+  border: 2px solid white;
   -webkit-box-shadow: 0px 0px 5px #eff874 inset;
   box-shadow: 0px 0px 5px #eff874 inset;
-}
-
-#controls ol .scene-control.toggle.active,
-#controls ol .control-tool.toggle.active {
-  background: #eff874;
 }
 
 #players {
@@ -420,18 +443,58 @@ div#sidebar.collapsed #sidebar-tabs {
   color: black;
   background: #c5c5c5;
   font-size: small;
+  margin: 0 0;
+}
+
+#hotbar .bar-controls#hotbar-directory-controls {
+  border-radius: 30% 0% 0% 30%;
+  border-right: 4px solid black;
+}
+
+#hotbar .bar-controls#hotbar-page-controls {
+  border-radius: 0% 30% 30% 0%;
+  position: relative;
+  left: -3px;
+  border-left: 4px solid black;
+}
+
+#hotbar #macro-list {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 502px;
+  flex: 0 0 502px;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  list-style: none;
+  margin: 0 2px;
+  padding: 0;
+  border: none;
+  border-radius: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 #hotbar .macro {
   color: black;
   background: rgba(197, 197, 197, 0.527);
+  border-radius: 0;
+}
+
+#hotbar .macro.active:hover, #hotbar .macro:hover {
+  -webkit-box-shadow: 0 0 10px #eff874 inset;
+  box-shadow: 0 0 10px #eff874 inset;
+  border: white;
 }
 
 #hotbar .macro .macro-key {
   font-family: aileron;
   font-weight: lighter;
   background-color: #9198e5;
+  border: 1px solid black;
   color: black;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 50%;
 }
 
 .app:not(#navigation, #players, .control-tools, #hotbar) {
@@ -721,42 +784,31 @@ select option {
   width: 100%;
   color: white;
   text-align: center;
-  font-family: 'aileron';
+  font-family: "aileron";
   background: black;
   font-size: larger;
 }
 
 #chat-log .titre1:before {
   position: absolute;
-  content: '';
-  right: 0;
-  top: 0;
-  border-top: 25px solid #d5e9f9;
-  border-right: 20px solid #d5e9f9;
-  border-left: 20px solid black;
-}
-
-#chat-log .titre1:after {
-  position: absolute;
-  content: '.';
+  content: ".";
   color: black;
-  right: 25px;
+  right: 10%;
   top: 0;
-  /* border-top: 25px solid #d5e9f900; */
-  border-right: 10px solid #4c646be3;
-  border-left: 5px solid #b0e8f980;
   -webkit-transform: skew(39deg);
   -ms-transform: skew(39deg);
   transform: skew(39deg);
   -webkit-box-shadow: 0px 0px 15px #b0e8f97a;
-  box-shadow: 0px 0px 15px #b0e8f97a;
+  box-shadow: 0px 0px 15px #8be4ff, 10px 0px 15px #279cbd80 inset;
+  width: 10%;
+  height: 100%;
 }
 
 #chat-log .titre2 {
   color: white;
   text-align: center;
   font-size: large;
-  content: '';
+  content: "";
   background: black;
   -webkit-transform: skew(-15deg);
   -ms-transform: skew(-15deg);
@@ -766,7 +818,7 @@ select option {
 }
 
 #chat-log .rot {
-  font: normal 16px/normal "Times New Roman", Times, serif;
+  font: normal 16px / normal "Times New Roman", Times, serif;
   color: rgba(0, 0, 0, 0.9);
   -o-text-overflow: clip;
   text-overflow: clip;
@@ -934,7 +986,6 @@ form.itemSheet input[type="number"] {
   -webkit-box-shadow: 0 0 0px rgba(0, 204, 255, 0.788);
   box-shadow: 0 0 0px rgba(0, 204, 255, 0.788);
   color: #3b5157;
-  text-align: center;
 }
 
 form.actorSheet input[type="text"]:focus,
@@ -998,10 +1049,24 @@ form.itemSheet .titre1 input:hover {
   box-shadow: 0px 0px 15px white inset;
 }
 
+form.actorSheet .titre1 .titleAdd,
+form.itemSheet .titre1 .titleAdd {
+  padding-right: 0px;
+}
+
 form.actorSheet .titleAdd,
 form.itemSheet .titleAdd {
-  background-color: #6e6e80;
+  -webkit-appearance: input;
+  -moz-appearance: input;
+  appearance: input;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0)), color-stop(31%, rgba(169, 169, 255, 0.63)), color-stop(69%, rgba(169, 169, 255, 0.63)), color-stop(70%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(169, 169, 255, 0.63) 31%, rgba(169, 169, 255, 0.63) 69%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(169, 169, 255, 0.63) 31%, rgba(169, 169, 255, 0.63) 69%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  float: right;
   margin-top: 6px;
+  font-size: smaller;
+  text-transform: uppercase;
+  padding-right: 15%;
 }
 
 form.actorSheet span.pastille,
@@ -1019,19 +1084,19 @@ form.itemSheet span.pastille {
 
 form.actorSheet .item,
 form.itemSheet .item {
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   color: black;
   position: relative;
   font-family: "Ddin";
-  background: white;
-  margin: 8px;
-  padding: 5px;
+  background: #cfcdcd;
+  margin-bottom: 5px;
   padding-top: 15px;
-  -webkit-box-shadow: -10px 10px 15px black, 10px -10px 15px rgba(15, 28, 54, 0.466);
-  box-shadow: -10px 10px 15px black, 10px -10px 15px rgba(15, 28, 54, 0.466);
-  -webkit-clip-path: polygon(-20px 0px, calc(100% - 35px) 0px, 100% 50%, 100% 100%, -20px 100%);
-  clip-path: polygon(-20px 0%, calc(100% - 35px) 0px, 120% 50%, 120% 150%, -20px 150%);
+  -webkit-box-shadow: -10px 10px 15px black, 10px -10px 15px gray;
+  box-shadow: -10px 10px 15px black, 10px -10px 15px gray;
+  -webkit-clip-path: polygon(-20% 14%, 75% 14%, 85% 0, 90% 0, 100% 15%, 120% 120%, 0 120%);
+  clip-path: polygon(-20% 14%, 75% 14%, 85% 0, 90% 0, 100% 15%, 120% 120%, 0 120%);
 }
 
 form.actorSheet .item .itemName,
@@ -1042,7 +1107,7 @@ form.itemSheet .item .itemName {
 form.actorSheet .item .relanceBox,
 form.itemSheet .item .relanceBox {
   position: relative;
-  left: -20px;
+  left: -10px;
 }
 
 form.actorSheet .item .relanceBox input[type="checkbox"],
@@ -1401,6 +1466,7 @@ form.itemSheet .objectifs .editor {
   width: 90%;
   padding: 5px;
   min-height: 65px;
+  margin-left: 6%;
 }
 
 form.actorSheet .objectifs .flex-row,
@@ -1417,8 +1483,38 @@ form.itemSheet .objectifs .flex-row input[type="checkbox"] {
   -ms-transform: scale(2);
   transform: scale(2);
   border: none;
-  color: #002900;
+  color: rgba(0, 41, 0, 0);
   background-color: transparent;
+  max-width: 0px;
+}
+
+form.actorSheet .objectifs .flex-row input[type="checkbox"]:checked,
+form.itemSheet .objectifs .flex-row input[type="checkbox"]:checked {
+  -webkit-filter: unset;
+  filter: unset;
+}
+
+form.actorSheet .objectifs .flex-row input[type="checkbox"]:after,
+form.itemSheet .objectifs .flex-row input[type="checkbox"]:after {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  width: 16px;
+  height: 16px;
+  color: #ff000000;
+  content: "-";
+  position: absolute;
+  left: -1px;
+  top: 2px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 12px red inset, 0px 0px 12px red;
+  box-shadow: 0px 0px 12px red inset, 0px 0px 12px red;
+}
+
+form.actorSheet .objectifs .flex-row input[type="checkbox"]:checked:after,
+form.itemSheet .objectifs .flex-row input[type="checkbox"]:checked:after {
+  -webkit-box-shadow: 0px 0px 12px green inset, 0px 0px 12px green;
+  box-shadow: 0px 0px 12px green inset, 0px 0px 12px green;
 }
 
 form.actorSheet .notes,
@@ -1458,6 +1554,17 @@ form.itemSheet .header input[type="radio"] {
   /* margin: 0 0 0 5px; */
   width: 16px;
   height: 16px;
+}
+
+form.itemSheet .header input[type="radio"]:after, form.itemSheet .header input[type="radio"]:before {
+  position: absolute;
+  content: ".";
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 0;
+  border: 2px solid black;
+  opacity: 1;
 }
 
 form.itemSheet .header input[type="radio"]:before {
@@ -1506,8 +1613,8 @@ form.itemSheet .description {
 }
 
 a:hover {
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.904);
-  color: #8c96a3;
+  text-shadow: 0px 0px 4px white;
+  color: #66a9ff;
 }
 
 .resource-label {

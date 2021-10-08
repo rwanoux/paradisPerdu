@@ -68,7 +68,7 @@
     }
     .rerolled {
         text-decoration: line-through;
-        background-color: grey!important;
+        background-color: grey !important;
         text-decoration-color: red;
     }
     .resultat {
@@ -116,7 +116,12 @@
         color: rgba(0, 0, 0, 0.9);
         -o-text-overflow: clip;
         text-overflow: clip;
-        background-image: linear-gradient(90deg, rgba(126, 132, 146, 0.486) 0, rgba(212, 212, 212, 0.486) 33%, rgba(167, 208, 243, 0.479) 100%);
+        background-image: linear-gradient(
+            90deg,
+            rgba(126, 132, 146, 0.486) 0,
+            rgba(212, 212, 212, 0.486) 33%,
+            rgba(167, 208, 243, 0.479) 100%
+        );
         background-position: 50% 50%;
         -webkit-background-origin: padding-box;
         background-origin: padding-box;
@@ -132,43 +137,37 @@
         width: 100%;
         color: white;
         text-align: center;
-        font-family: 'aileron';
+        font-family: "aileron";
         background: black;
         font-size: larger;
     }
+
     .titre1:before {
         position: absolute;
-        content: '';
-        right: 0;
-        top: 0;
-        border-top: 25px solid #d5e9f9;
-        border-right: 20px solid #d5e9f9;
-        border-left: 20px solid black;
-    }
-    .titre1:after {
-        position: absolute;
-        content: '.';
+        content: ".";
         color: black;
-        right: 25px;
+        right: 10%;
         top: 0;
-        /* border-top: 25px solid #d5e9f900; */
-        border-right: 10px solid #4c646be3;
-        border-left: 5px solid #b0e8f980;
-        transform: skew( 39deg);
-        box-shadow: 0px 0px 15px #b0e8f97a;
+        -webkit-transform: skew(39deg);
+        -ms-transform: skew(39deg);
+        transform: skew(39deg);
+        -webkit-box-shadow: 0px 0px 15px #b0e8f97a;
+        box-shadow: 0px 0px 15px #8be4ff, 10px 0px 15px #279cbd80 inset;
+        width: 10%;
+        height: 100%;
     }
     .titre2 {
         color: white;
         text-align: center;
         font-size: large;
-        content: '';
+        content: "";
         background: rgb(0, 0, 0);
         //z-index: -1;
         transform: skew(-15deg);
         box-shadow: 3px 3px 0 0 rgba(0, 26, 255, 0.425);
     }
     .rot {
-        font: normal 16px/normal "Times New Roman", Times, serif;
+        font: normal 16px / normal "Times New Roman", Times, serif;
         color: rgba(0, 0, 0, 0.9);
         -o-text-overflow: clip;
         text-overflow: clip;
@@ -208,7 +207,7 @@
         -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
         -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
         transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
-        color: #1c1d1b
+        color: #1c1d1b;
     }
     #chat-log .message .message-header {
         line-height: 20px;

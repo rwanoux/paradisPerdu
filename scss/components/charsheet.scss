@@ -71,7 +71,6 @@ form.itemSheet {
     input[type="number"] {
         box-shadow: 0 0 0px rgba(0, 204, 255, 0.788);
         color: rgb(59, 81, 87);
-        text-align: center;
     }
     input[type="text"]:focus,
     input[type="number"]:focus,
@@ -107,10 +106,26 @@ form.itemSheet {
                 box-shadow: 0px 0px 15px white inset;
             }
         }
+        .titleAdd {
+            padding-right: 0px;
+        }
     }
     .titleAdd {
-        background-color: #6e6e80;
+        appearance: input;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 30%,
+            rgba(169, 169, 255, 0.63) 31%,
+            rgba(169, 169, 255, 0.63) 69%,
+            rgba(0, 0, 0, 0) 70%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        float: right;
         margin-top: 6px;
+        font-size: smaller;
+        text-transform: uppercase;
+        padding-right: 15%;
     }
     span.pastille {
         position: relative;
@@ -122,23 +137,23 @@ form.itemSheet {
         padding: 5px;
     }
     .item {
-        justify-content: space-around;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
         color: black;
         position: relative;
         font-family: "Ddin";
-        background: white;
-        margin: 8px;
-        padding: 5px;
+        background: #cfcdcd;
+        margin-bottom: 5px;
         padding-top: 15px;
-        box-shadow: -10px 10px 15px black, 10px -10px 15px rgba(15, 28, 54, 0.466);
-        -webkit-clip-path: polygon(-20px 0px, calc(100% - 35px) 0px, 100% 50%, 100% 100%, -20px 100%);
-        clip-path: polygon(-20px -0%, calc(100% - 35px) 0px, 120% 50%, 120% 150%, -20px 150%);
+        box-shadow: -10px 10px 15px black, 10px -10px 15px gray;
+        clip-path: polygon(-20% 14%, 75% 14%, 85% 0, 90% 0, 100% 15%, 120% 120%, 0 120%);
         .itemName {
             text-transform: uppercase;
         }
         .relanceBox {
             position: relative;
-            left: -20px;
+            left: -10px;
             input[type="checkbox"] {
                 appearance: none;
                 border: 3px solid black;
@@ -190,7 +205,7 @@ form.itemSheet {
         .aptiLine:hover {
             .button {
                 transform: scale(1.3);
-                .hex>div {
+                .hex > div {
                     background-color: rgb(255, 255, 255);
                 }
             }
@@ -225,11 +240,11 @@ form.itemSheet {
             transition: 0.2s;
             overflow: hidden;
         }
-        .titre1:hover~.rule-tips {
+        .titre1:hover ~ .rule-tips {
             max-height: 150px;
         }
     }
-    .compteur>div {
+    .compteur > div {
         margin-right: 2vw;
         width: 100%;
     }
@@ -250,7 +265,7 @@ form.itemSheet {
             transition: 0.6s;
             transform: rotate(0deg);
         }
-        .hex+input {
+        .hex + input {
             margin-left: 3px;
             z-index: 100;
             border: none;
@@ -263,7 +278,7 @@ form.itemSheet {
             color: black;
             background-color: transparent;
         }
-        .hex+input:focus {
+        .hex + input:focus {
             border: none;
             box-shadow: none;
         }
@@ -362,6 +377,7 @@ form.itemSheet {
             width: 90%;
             padding: 5px;
             min-height: 65px;
+            margin-left: 6%;
         }
         .flex-row {
             align-content: center;
@@ -369,8 +385,27 @@ form.itemSheet {
             input[type="checkbox"] {
                 transform: scale(2);
                 border: none;
-                color: rgb(0, 41, 0);
+                color: rgba(0, 41, 0, 0);
                 background-color: transparent;
+                max-width: 0px;
+                &:checked {
+                    filter: unset;
+                }
+                &:after {
+                    transition: 0.3s;
+                    width: 16px;
+                    height: 16px;
+                    color: #ff000000;
+                    content: "-";
+                    position: absolute;
+                    left: -1px;
+                    top: 2px;
+                    border-radius: 50%;
+                    box-shadow: 0px 0px 12px red inset, 0px 0px 12px red;
+                }
+                &:checked:after {
+                    box-shadow: 0px 0px 12px green inset, 0px 0px 12px green;
+                }
             }
         }
     }

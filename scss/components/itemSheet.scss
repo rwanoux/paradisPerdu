@@ -22,6 +22,17 @@ form.itemSheet {
             /* margin: 0 0 0 5px; */
             width: 16px;
             height: 16px;
+            &:after,
+            &:before {
+                position: absolute;
+                content: ".";
+                height: 16px;
+                width: 16px;
+                top: 0;
+                left: 0;
+                border: 2px solid black;
+                opacity: 1;
+            }
         }
         input[type="radio"]:before {
             position: absolute;

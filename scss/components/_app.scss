@@ -32,8 +32,24 @@ h6 {
     min-height: 80px;
     max-height: 200px;
     min-width: 200px;
+    .editor-edit {
+        background: none;
+        border: none;
+        box-shadow: none;
+        color: rgba(0, 0, 0, 0.61);
+        &:hover {
+            color: black;
+        }
+    }
 }
-
+.sheet .editor-content {
+    * {
+        height: 100%;
+        overflow-y: auto;
+        word-break: break-word;
+        font-size: small;
+    }
+}
 #logo {
     position: relative;
 }
@@ -116,28 +132,30 @@ div#sidebar.collapsed {
             .scene-name {
                 font-family: aileron;
             }
-            background: #3e4166;
+            background: url(../img/ParadisPerdu_fond_sanstitre.jpg) !important;
+            background-size: cover !important;
             border: none;
+            box-shadow: 20px 10px 15px #3e8c5cbf inset;
         }
+
         .scene.gm {
             border: none;
-            box-shadow: 0px 20px 15px #8c3e3e inset;
+            box-shadow: 20px 10px 15px #8c3e3ebf inset;
         }
-        .scene.view {
-            box-shadow: 0px 20px 15px #3e4c8c inset;
-            border-bottom: 3px solid rgb(206, 221, 0);
-        }
-        .scene.view.gm {
-            box-shadow: 0px 20px 15px #8c3e3e inset;
-            border-bottom: 3px solid rgb(206, 221, 0);
-        }
-        .scene {
-            box-shadow: 0px 20px 15px #3e4c8c inset;
-        }
-        .scene.active,
-        .scen.view.active {
+        .scene.view,
+        .scene.view.active {
             border: none;
-            box-shadow: 0px 20px 15px #3e8c3e inset;
+            border-left: 6px solid rgb(206, 221, 0);
+            box-shadow: none;
+        }
+
+        .scene.active {
+            border: none;
+            box-shadow: 20px 10px 15px #8c843ebf inset;
+        }
+        .context {
+            box-shadow: none;
+            border: none;
         }
     }
 }
@@ -162,26 +180,28 @@ div#sidebar.collapsed {
 }
 
 #controls {
-    ol {
-        .scene-control,
-        .control-tool {
-            color: rgb(90, 90, 90);
-            background: rgb(197, 197, 197);
-            &.active,
+    .scene-control,
+    .control-tool {
+        color: rgb(90, 90, 90);
+        background: rgb(197, 197, 197);
+        &.active,
+        &:hover {
+            color: black;
+            border: 2px solid rgb(239, 248, 116);
+            box-shadow: 0px 0px 5px white;
+        }
+        &.toggle {
+            background: #6b6b6b;
+            border: 2px solid black;
             &:hover {
-                color: black;
-                border: 2px solid rgb(239, 248, 116);
-                box-shadow: 0px 0px 5px white;
+                background: rgb(145, 145, 145);
+                border: 2px solid rgb(143, 142, 142);
+                box-shadow: 0px 0px 5px rgb(125, 128, 97) inset;
             }
-            &.toggle {
-                background: rgb(173, 173, 173);
-                &:hover,
-                &.active {
-                    box-shadow: 0px 0px 5px rgb(239, 248, 116) inset;
-                }
-                &.active {
-                    background: rgb(239, 248, 116);
-                }
+            &.active {
+                background: rgb(197, 197, 197);
+                border: 2px solid rgb(255, 255, 255);
+                box-shadow: 0px 0px 5px rgb(239, 248, 116) inset;
             }
         }
     }
@@ -229,15 +249,48 @@ div#sidebar.collapsed {
         color: black;
         background: rgb(197, 197, 197);
         font-size: small;
+        margin: 0 0;
+        &#hotbar-directory-controls {
+            border-radius: 30% 0% 0% 30%;
+            border-right: 4px solid black;
+        }
+        &#hotbar-page-controls {
+            border-radius: 0% 30% 30% 0%;
+            position: relative;
+            left: -3px;
+            border-left: 4px solid black;
+        }
+    }
+    #macro-list {
+        flex: 0 0 502px;
+        flex-wrap: nowrap;
+        height: 100%;
+        list-style: none;
+        margin: 0 2px;
+        padding: 0;
+        border: none;
+        border-radius: none;
+        padding: 0px;
+        margin: 0px;
     }
     .macro {
         color: black;
         background: rgba(197, 197, 197, 0.527);
+        &.active:hover,
+        &:hover {
+            box-shadow: 0 0 10px #eff874 inset;
+            border: white;
+        }
+        border-radius: 0;
         .macro-key {
             font-family: aileron;
             font-weight: lighter;
             background-color: #9198e5;
+            border: 1px solid black;
             color: black;
+            top: 0;
+            right: 0;
+            border-radius: 0 0 0 50%;
         }
     }
 }

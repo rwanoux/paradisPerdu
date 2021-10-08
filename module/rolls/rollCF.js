@@ -18,7 +18,6 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
             dicesResults.push(res.result);
         }
         let aptiDice = r.terms[0].results.length;
-        console.log(aptiDice);
         let result = parseInt(r.result);
         let rollConfig = {
             "aptiName": aptiName,
@@ -40,7 +39,7 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
                 content: c,
             });
 
-        })
+        });
 
 
     } else {
@@ -54,6 +53,7 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
         let ress = actor.data.data.compteurs.adrenaline.value;
         let newRess = ress;
         let formula = "(@apti)d6x6cs>3";
+
         const rollCFDialog = 'systems/paradisPerdu/templates/rolls/rollCF-dialog.html';
         const rollCFContent = await renderTemplate(rollCFDialog, {
             diff: diff,
@@ -79,7 +79,7 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
                 }
             },
             default: "one",
-            close: () => {}
+            close: () => { }
         });
         aptiDialog.render(true);
 
@@ -88,7 +88,7 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
         async function roll(html, actor) {
 
             let diffRoll = html.find("#diff").val();
-            let adrenaline = html.find("#adrenaline").val()
+            let adrenaline = html.find("#adrenaline").val();
             let reussite = false;
             let echec = false;
             let reussiteT = false;
@@ -124,9 +124,9 @@ export async function rollCF(actor, apt, relanceDispo, spe, dgt) {
             for (let res of r.terms[0].results) {
                 dicesResults.push(res.result);
             }
-            if (adrenaline) { newRess = newRess - adrenaline };
-            if (newRess > 6) { newRess = 6 };
-            if (newRess <= 0) { newRess = 0 };
+            if (adrenaline) { newRess = newRess - adrenaline; }
+            if (newRess > 6) { newRess = 6; }
+            if (newRess <= 0) { newRess = 0; }
 
             let rollConfig = {
                 adrenaline: adrenaline,

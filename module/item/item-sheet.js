@@ -7,40 +7,24 @@ import { systemConfig } from "../config/config.js";
 export class paradisPerduItemSheet extends ItemSheet {
 
 
-
-
-    /** @override */
-    static get defaultOptions() {
-        console.log(this)
+    constructor(...args) {
+        super(...args);
 
         switch (this.object.data.type) {
 
 
             case "spécialité":
-                return mergeObject(super.defaultOptions, {
-                    classes: ["paradisPerdu", "sheet", "item"],
-                    width: 430,
-                    height: 200
 
-                });
+                this.options.height = this.position.height = 450;
+                this.options.height = this.position.height = 220;
                 break;
-            case "arme":
-                return mergeObject(super.defaultOptions, {
-                    classes: ["paradisPerdu", "sheet", "item"],
-                    width: 550,
-                    height: 410
 
-                });
-                break;
-            case "objet":
-                return mergeObject(super.defaultOptions, {
-                    classes: ["paradisPerdu", "sheet", "item"],
-                    width: 550,
-                    height: 410
 
-                });
-                break;
+            default:
+                this.options.width = this.position.width = 550;
+                this.options.height = this.position.height = 430;
         }
+
     }
 
     /** @override */
