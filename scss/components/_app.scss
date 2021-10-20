@@ -26,6 +26,13 @@ h6 {
 
 .tox.tox-tinymce {
     min-height: 80px;
+    .tox-tbtn {
+        width: 18px;
+        height: 18px;
+        margin: 3px;
+        background: gainsboro;
+        padding: 2px;
+    }
 }
 
 .editor {
@@ -36,7 +43,7 @@ h6 {
         background: none;
         border: none;
         box-shadow: none;
-        color: rgba(0, 0, 0, 0.61);
+        color: rgba(0, 0, 0, 0.3);
         &:hover {
             color: black;
         }
@@ -312,7 +319,28 @@ div#sidebar.collapsed {
         background-image: unset;
     }
 }
-
+@keyframes gravity {
+    0% {
+        top: 46vh;
+        left: 50vw;
+    }
+    20% {
+        top: 48vh;
+        left: 35vw;
+    }
+    50% {
+        top: 52vh;
+        left: 50vw;
+    }
+    60% {
+        top: 55vh;
+        left: 40vw;
+    }
+    100% {
+        top: 46vh;
+        left: 50vw;
+    }
+}
 #pause {
     width: 10vw;
     height: 10vw;
@@ -323,6 +351,8 @@ div#sidebar.collapsed {
     z-index: var(--z-index-ui);
     display: none;
     background: unset;
+    animation: gravity 45s infinite ease-in-out;
+
     h3 {
         color: rgb(255, 242, 166);
         font-size: xx-large;

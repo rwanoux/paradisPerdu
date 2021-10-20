@@ -7,6 +7,7 @@ $ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
 // Display
 $borderHover: 2px;
 $dark: rgb(22, 35, 54);
+
 .sheet.compact {
     form.actorSheet {
         grid-template-columns: repeat(3, 1fr);
@@ -56,6 +57,9 @@ form.itemSheet {
         font-size: 0.7em;
         font-family: built;
     }
+    .highlight {
+        background: linear-gradient(90deg, rgba(255, 72, 0, 0.5329482134650736) 00%, rgba(0, 0, 0, 0) 100%);
+    }
     div.bloque {
         position: relative;
         -webkit-box-sizing: content-box;
@@ -98,6 +102,7 @@ form.itemSheet {
         font-size: larger;
         clip-path: polygon(0px 0px, calc(100% - 35px) 0px, 100% calc(100% - 15px), 100% 100%, 0% 100%);
         margin-bottom: 5px;
+
         input {
             transition: 0.5s;
             color: white;
@@ -179,6 +184,11 @@ form.itemSheet {
         grid-row: 1/2;
         .img-cont {
             max-width: 120px;
+            position: relative;
+            transition: 0.3s;
+            &:hover {
+                transform: scale(1.2);
+            }
         }
         .info-blok {
             width: 90%;
@@ -233,14 +243,14 @@ form.itemSheet {
         grid-row: 4/5;
         .button {
             top: -15%;
-            left: 80%;
+            right: 10%;
         }
         .rule-tips {
             max-height: 1px;
             transition: 0.2s;
             overflow: hidden;
         }
-        .titre1:hover ~ .rule-tips {
+        .aptiLine:hover ~ .rule-tips {
             max-height: 150px;
         }
     }

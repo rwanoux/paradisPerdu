@@ -5,7 +5,7 @@ import {
 
 
 export async function reroll(event, chatMessage, html, messageData) {
-    let succes = html.find("span.resultat")[html.find("span.resultat").length - 1]
+    let succes = html.find("span.resultat")[html.find("span.resultat").length - 1];
     let targetDie = event.currentTarget;
     let nbrRelance = html.find("span.nbrRelance")[html.find("span.nbrRelance").length - 1];
 
@@ -29,7 +29,7 @@ export async function reroll(event, chatMessage, html, messageData) {
         nbrRelance.innerText = parseInt(nbrRelance.innerText) - 1;
         let contentHTML = targetDie.closest('div.message-content').innerHTML;
 
-        console.log(contentHTML)
+        console.log(contentHTML);
         let chatData = {
 
             content: contentHTML
@@ -38,7 +38,7 @@ export async function reroll(event, chatMessage, html, messageData) {
         if (game.dice3d) {
             game.dice3d.showForRoll(r).then(
                 chatMessage.update(chatData)
-            )
+            );
         } else {
             chatMessage.update(chatData)
         }

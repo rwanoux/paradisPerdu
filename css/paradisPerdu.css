@@ -168,6 +168,14 @@ h6 {
   min-height: 80px;
 }
 
+.tox.tox-tinymce .tox-tbtn {
+  width: 18px;
+  height: 18px;
+  margin: 3px;
+  background: gainsboro;
+  padding: 2px;
+}
+
 .editor {
   min-height: 80px;
   max-height: 200px;
@@ -179,7 +187,7 @@ h6 {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: rgba(0, 0, 0, 0.61);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .editor .editor-edit:hover {
@@ -516,6 +524,52 @@ div#sidebar.collapsed #sidebar-tabs {
   background-image: unset;
 }
 
+@-webkit-keyframes gravity {
+  0% {
+    top: 46vh;
+    left: 50vw;
+  }
+  20% {
+    top: 48vh;
+    left: 35vw;
+  }
+  50% {
+    top: 52vh;
+    left: 50vw;
+  }
+  60% {
+    top: 55vh;
+    left: 40vw;
+  }
+  100% {
+    top: 46vh;
+    left: 50vw;
+  }
+}
+
+@keyframes gravity {
+  0% {
+    top: 46vh;
+    left: 50vw;
+  }
+  20% {
+    top: 48vh;
+    left: 35vw;
+  }
+  50% {
+    top: 52vh;
+    left: 50vw;
+  }
+  60% {
+    top: 55vh;
+    left: 40vw;
+  }
+  100% {
+    top: 46vh;
+    left: 50vw;
+  }
+}
+
 #pause {
   width: 10vw;
   height: 10vw;
@@ -526,6 +580,8 @@ div#sidebar.collapsed #sidebar-tabs {
   z-index: var(--z-index-ui);
   display: none;
   background: unset;
+  -webkit-animation: gravity 45s infinite ease-in-out;
+  animation: gravity 45s infinite ease-in-out;
 }
 
 #pause h3 {
@@ -964,6 +1020,13 @@ form.itemSheet .rule-tips {
   font-family: built;
 }
 
+form.actorSheet .highlight,
+form.itemSheet .highlight {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 72, 0, 0.532948)), to(rgba(0, 0, 0, 0)));
+  background: -o-linear-gradient(left, rgba(255, 72, 0, 0.532948) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 72, 0, 0.532948) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
 form.actorSheet div.bloque,
 form.itemSheet div.bloque {
   position: relative;
@@ -1147,6 +1210,17 @@ form.itemSheet .infos {
 form.actorSheet .infos .img-cont,
 form.itemSheet .infos .img-cont {
   max-width: 120px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+form.actorSheet .infos .img-cont:hover,
+form.itemSheet .infos .img-cont:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 form.actorSheet .infos .info-blok,
@@ -1240,7 +1314,7 @@ form.itemSheet .compteur {
 form.actorSheet .compteur .button,
 form.itemSheet .compteur .button {
   top: -15%;
-  left: 80%;
+  right: 10%;
 }
 
 form.actorSheet .compteur .rule-tips,
@@ -1252,8 +1326,8 @@ form.itemSheet .compteur .rule-tips {
   overflow: hidden;
 }
 
-form.actorSheet .compteur .titre1:hover ~ .rule-tips,
-form.itemSheet .compteur .titre1:hover ~ .rule-tips {
+form.actorSheet .compteur .aptiLine:hover ~ .rule-tips,
+form.itemSheet .compteur .aptiLine:hover ~ .rule-tips {
   max-height: 150px;
 }
 

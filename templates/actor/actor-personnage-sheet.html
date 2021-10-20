@@ -168,33 +168,32 @@
 	<div class="bloque compteur ">
 		{{#each data.data.compteurs as |compt id|}}
 			<div>
-				<div class="titre1 ">{{compt.label}}
+				<div class="aptiLine ">{{compt.label}}
+					<div class="button ">
+						<div class="hex ">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="hex ">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<input type="number " name="data.compteurs.{{id}}.value" min="0 " max="6 " value="{{compt.value}}" data-dtype="Number ">
+					</div>
 				</div>
 
-				<div class="button ">
-					<div class="hex ">
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-					<div class="hex ">
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-					<input type="number " name="data.compteurs.{{id}}.value " min="0 " max="6 " value="{{compt.value}}" data-dtype="Number ">
-				</div>
 
-
-				{{#ifequal compt.label "santé "}}
+				{{#ifequal compt.label "santé"}}
 					<div class="rule-tips ">
-						<p>À 2 : +1 RÉUSSITE EXIGÉE
+						<p {{#ifequal compt.value 2}} class="highlight" {{/ifequal}}>À 2 : +1 RÉUSSITE EXIGÉE
 						</p>
-						<p>À 1 : +2 RÉUSSITES EXIGÉES</p>
-						<p>À 0 : INCONSCIENT. AGONIE 1D TOURS : ENDURER/4</p>
+						<p {{#ifequal compt.value 1}} class="highlight" {{/ifequal}}>À 1 : +2 RÉUSSITES EXIGÉES</p>
+						<p {{#ifequal compt.value 0}} class="highlight" {{/ifequal}}>À 0 : INCONSCIENT. AGONIE 1D TOURS : ENDURER/4</p>
 					</div>
 				{{/ifequal}}
-				{{#ifequal compt.label "adrenaline "}}
+				{{#ifequal compt.label "adrenaline"}}
 					<div class="rule-tips ">
 
 						<p>
@@ -213,11 +212,13 @@
 		<h2 class="titre1 ">situation</h2>
 		{{editor content=data.data.background.situation.text target="data.background.situation.text" button=true owner=owner editable=editable}}
 	</div>
-	<div class="secret bloque ">
-		<h2 class="titre1 ">secret</h2>
-		{{editor content=data.data.background.secret.text target="data.background.secret.text" button=true owner=owner editable=editable}}
+	{{#if owner }}
+		<div class="secret bloque ">
+			<h2 class="titre1 ">secret</h2>
+			{{editor content=data.data.background.secret.text target="data.background.secret.text" button=true owner=owner editable=editable}}
 
-	</div>
+		</div>
+	{{/if }}
 	<div class="objectifs bloque ">
 		<h2 class="titre1 ">objectifs</h2>
 
