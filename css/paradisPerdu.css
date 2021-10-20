@@ -137,6 +137,19 @@
   text-align: right;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  outline: none;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#11758e), color-stop(28%, #097975), color-stop(62%, #04b9c9), to(#00404d));
+  background: linear-gradient(0deg, #11758e 0%, #097975 28%, #04b9c9 62%, #00404d 100%);
+  border: 1px solid white;
+}
+
 body {
   width: 100vw;
   height: 100vh;
