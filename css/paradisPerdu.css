@@ -225,7 +225,7 @@ div#sidebar.collapsed {
   height: max-content;
   position: fixed;
   right: 0%;
-  height: 45%;
+  height: 55%;
 }
 
 div#sidebar.collapsed #sidebar-tabs {
@@ -379,30 +379,58 @@ div#sidebar.collapsed #sidebar-tabs {
   text-shadow: 0 0 4px #1d3d50;
 }
 
-#controls ol .scene-control,
-#controls ol .control-tool {
-  color: #5a5a5a;
-  background: #c5c5c5;
+#controls ol {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+  background-position: 55% 50%;
+  background-size: 500% 100%;
 }
 
-#controls ol .scene-control.active, #controls ol .scene-control:hover,
-#controls ol .control-tool.active,
-#controls ol .control-tool:hover {
-  color: black;
-  border: 2px solid #eff874;
-  -webkit-box-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white;
+#controls ol .scene-control,
+#controls ol .control-tool {
+  width: 36px;
+  height: 36px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  font-size: 18px;
+  line-height: 36px;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 10px var(--color-shadow-dark);
+  box-shadow: 0 0 10px var(--color-shadow-dark);
+  margin: unset;
+  color: var(--color-text-light-4);
+  text-align: center;
+  border: 1px solid var(--color-border-dark);
+  border-radius: unset;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #00c8ff54;
+  -webkit-box-shadow: 0 0 6px inset #0084ff67;
+  box-shadow: 0 0 6px inset #0084ff67;
+}
+
+#controls ol .scene-control:hover, #controls ol .scene-control.active,
+#controls ol .control-tool:hover,
+#controls ol .control-tool.active {
+  color: #00c9ff;
+  border: 1px solid #00c9ff;
+  -webkit-box-shadow: 0 0 6px inset #0085ff;
+  box-shadow: 0 0 6px inset #0085ff;
 }
 
 #controls ol .scene-control.toggle,
 #controls ol .control-tool.toggle {
-  background: #6b6b6b;
-  border: 2px solid black;
+  border: 1px solid #00c8ff54;
+  -webkit-box-shadow: 0 0 6px inset #0084ff67;
+  box-shadow: 0 0 6px inset #0084ff67;
+  background: #ff0000a2;
 }
 
 #controls ol .scene-control.toggle:hover,
 #controls ol .control-tool.toggle:hover {
-  background: #919191;
+  background: #ffa600a2;
   border: 2px solid #8f8e8e;
   -webkit-box-shadow: 0px 0px 5px #7d8061 inset;
   box-shadow: 0px 0px 5px #7d8061 inset;
@@ -410,10 +438,31 @@ div#sidebar.collapsed #sidebar-tabs {
 
 #controls ol .scene-control.toggle.active,
 #controls ol .control-tool.toggle.active {
-  background: #c5c5c5;
+  background: #00ff628f;
   border: 2px solid white;
   -webkit-box-shadow: 0px 0px 5px #eff874 inset;
   box-shadow: 0px 0px 5px #eff874 inset;
+}
+
+#controls ol.main-controls, #controls ol.sub-controls.active {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px;
+}
+
+#controls ol.main-controls .control-tool,
+#controls ol.main-controls .scene-control, #controls ol.sub-controls.active .control-tool,
+#controls ol.sub-controls.active .scene-control {
+  margin: 3px 0px;
 }
 
 #players {
@@ -637,8 +686,7 @@ div#sidebar.collapsed #sidebar-tabs {
 .dialog .dialog-buttons button,
 #client-settings section.content .submenu > button,
 form button,
-button:not(.file-picker,
-.grid-config) {
+button:not(.file-picker, .grid-config) {
   background: -webkit-gradient(linear, left top, left bottom, from(#919191), to(#a0aeb3));
   background: -o-linear-gradient(#919191, #a0aeb3);
   background: linear-gradient(#919191, #a0aeb3);
