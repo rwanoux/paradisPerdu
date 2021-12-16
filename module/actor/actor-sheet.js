@@ -77,7 +77,7 @@ export class paradisPerduActorSheet extends ActorSheet {
         html.find('.item-edit').click(ev => {
             let el = ev.currentTarget.closest(".item");
             let item = this.actor.items.get(el.getAttribute("data-item-id"));
-            item.sheet.render(true)
+            item.sheet.render(true);
         });
 
         // Delete Inventory Item
