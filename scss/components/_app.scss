@@ -49,6 +49,7 @@ h6 {
         }
     }
 }
+
 .sheet .editor-content {
     * {
         height: 100%;
@@ -57,6 +58,7 @@ h6 {
         font-size: small;
     }
 }
+
 #logo {
     position: relative;
 }
@@ -144,7 +146,6 @@ div#sidebar.collapsed {
             border: none;
             box-shadow: 20px 10px 15px #3e8c5cbf inset;
         }
-
         .scene.gm {
             border: none;
             box-shadow: 20px 10px 15px #8c3e3ebf inset;
@@ -155,7 +156,6 @@ div#sidebar.collapsed {
             border-left: 6px solid rgb(206, 221, 0);
             box-shadow: none;
         }
-
         .scene.active {
             border: none;
             box-shadow: 20px 10px 15px #8c843ebf inset;
@@ -187,28 +187,30 @@ div#sidebar.collapsed {
 }
 
 #controls {
-    .scene-control,
-    .control-tool {
-        color: rgb(90, 90, 90);
-        background: rgb(197, 197, 197);
-        &.active,
-        &:hover {
-            color: black;
-            border: 2px solid rgb(239, 248, 116);
-            box-shadow: 0px 0px 5px white;
-        }
-        &.toggle {
-            background: #6b6b6b;
-            border: 2px solid black;
+    ol {
+        .scene-control,
+        .control-tool {
+            color: rgb(90, 90, 90);
+            background: rgb(197, 197, 197);
+            &.active,
             &:hover {
-                background: rgb(145, 145, 145);
-                border: 2px solid rgb(143, 142, 142);
-                box-shadow: 0px 0px 5px rgb(125, 128, 97) inset;
+                color: black;
+                border: 2px solid rgb(239, 248, 116);
+                box-shadow: 0px 0px 5px white;
             }
-            &.active {
-                background: rgb(197, 197, 197);
-                border: 2px solid rgb(255, 255, 255);
-                box-shadow: 0px 0px 5px rgb(239, 248, 116) inset;
+            &.toggle {
+                background: #6b6b6b;
+                border: 2px solid black;
+                &:hover {
+                    background: rgb(145, 145, 145);
+                    border: 2px solid rgb(143, 142, 142);
+                    box-shadow: 0px 0px 5px rgb(125, 128, 97) inset;
+                }
+                &.active {
+                    background: rgb(197, 197, 197);
+                    border: 2px solid rgb(255, 255, 255);
+                    box-shadow: 0px 0px 5px rgb(239, 248, 116) inset;
+                }
             }
         }
     }
@@ -319,6 +321,7 @@ div#sidebar.collapsed {
         background-image: unset;
     }
 }
+
 @keyframes gravity {
     0% {
         top: 46vh;
@@ -341,6 +344,7 @@ div#sidebar.collapsed {
         left: 50vw;
     }
 }
+
 #pause {
     width: 10vw;
     height: 10vw;
@@ -352,7 +356,6 @@ div#sidebar.collapsed {
     display: none;
     background: unset;
     animation: gravity 45s infinite ease-in-out;
-
     h3 {
         color: rgb(255, 242, 166);
         font-size: xx-large;
@@ -387,11 +390,13 @@ div#sidebar.collapsed {
     background: url(../img/fondTemp.png);
     background-size: cover;
 }
+
 .dialog .dialog-buttons button.default,
 .dialog .dialog-buttons button,
-#client-settings section.content .submenu > button,
+#client-settings section.content .submenu>button,
 form button,
-button:not(.file-picker, .grid-config) {
+button:not(.file-picker,
+.grid-config) {
     background: linear-gradient(#919191, #a0aeb3);
     clip-path: polygon(0px 20px, 0px 0px, calc(100% - 20px) 0px, 100% calc(100% - 20px), 100% 100%, 0% 100%);
     cursor: pointer;

@@ -379,37 +379,37 @@ div#sidebar.collapsed #sidebar-tabs {
   text-shadow: 0 0 4px #1d3d50;
 }
 
-#controls .scene-control,
-#controls .control-tool {
+#controls ol .scene-control,
+#controls ol .control-tool {
   color: #5a5a5a;
   background: #c5c5c5;
 }
 
-#controls .scene-control.active, #controls .scene-control:hover,
-#controls .control-tool.active,
-#controls .control-tool:hover {
+#controls ol .scene-control.active, #controls ol .scene-control:hover,
+#controls ol .control-tool.active,
+#controls ol .control-tool:hover {
   color: black;
   border: 2px solid #eff874;
   -webkit-box-shadow: 0px 0px 5px white;
   box-shadow: 0px 0px 5px white;
 }
 
-#controls .scene-control.toggle,
-#controls .control-tool.toggle {
+#controls ol .scene-control.toggle,
+#controls ol .control-tool.toggle {
   background: #6b6b6b;
   border: 2px solid black;
 }
 
-#controls .scene-control.toggle:hover,
-#controls .control-tool.toggle:hover {
+#controls ol .scene-control.toggle:hover,
+#controls ol .control-tool.toggle:hover {
   background: #919191;
   border: 2px solid #8f8e8e;
   -webkit-box-shadow: 0px 0px 5px #7d8061 inset;
   box-shadow: 0px 0px 5px #7d8061 inset;
 }
 
-#controls .scene-control.toggle.active,
-#controls .control-tool.toggle.active {
+#controls ol .scene-control.toggle.active,
+#controls ol .control-tool.toggle.active {
   background: #c5c5c5;
   border: 2px solid white;
   -webkit-box-shadow: 0px 0px 5px #eff874 inset;
@@ -637,7 +637,8 @@ div#sidebar.collapsed #sidebar-tabs {
 .dialog .dialog-buttons button,
 #client-settings section.content .submenu > button,
 form button,
-button:not(.file-picker, .grid-config) {
+button:not(.file-picker,
+.grid-config) {
   background: -webkit-gradient(linear, left top, left bottom, from(#919191), to(#a0aeb3));
   background: -o-linear-gradient(#919191, #a0aeb3);
   background: linear-gradient(#919191, #a0aeb3);
