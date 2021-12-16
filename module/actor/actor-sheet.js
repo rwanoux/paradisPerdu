@@ -106,7 +106,6 @@ export class paradisPerduActorSheet extends ActorSheet {
         html.find(".boutonApt").click(ev => {
 
             let apt = ev.target.getAttribute("rollCF");
-            console.log(apt);
             rollCF(actor, apt);
         });
 
@@ -139,7 +138,6 @@ export class paradisPerduActorSheet extends ActorSheet {
      */
     _onItemCreate(event) {
         event.preventDefault();
-        //const header = event.currentTarget.previousSiblingElement.innerText;
         // Get the type of item to create.
         const type = event.currentTarget.previousSiblingElement.innerText;
         // Grab any data associated with this control.

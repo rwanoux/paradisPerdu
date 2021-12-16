@@ -29,7 +29,6 @@ export async function reroll(event, chatMessage, html, messageData) {
         nbrRelance.innerText = parseInt(nbrRelance.innerText) - 1;
         let contentHTML = targetDie.closest('div.message-content').innerHTML;
 
-        console.log(contentHTML);
         let chatData = {
 
             content: contentHTML
@@ -40,7 +39,7 @@ export async function reroll(event, chatMessage, html, messageData) {
                 chatMessage.update(chatData)
             );
         } else {
-            chatMessage.update(chatData)
+            chatMessage.update(chatData);
         }
 
         /*
@@ -50,7 +49,7 @@ export async function reroll(event, chatMessage, html, messageData) {
 
 */
     } else {
-        ui.notifications.warn("Vous n'avez plus de relances disponible")
+        ui.notifications.warn("Vous n'avez plus de relances disponible");
     }
 
 }
