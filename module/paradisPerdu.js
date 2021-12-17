@@ -20,6 +20,7 @@ import {
 import * as Chat from "./chat.js"
 import { registerHelpers } from "./handlebarHelpers.js";
 import { sheetResize } from "./sheetResize.js";
+import { init3DMap } from "./3DMap.js";
 
 
 
@@ -67,11 +68,19 @@ Hooks.once('init', async function() {
 Hooks.on("renderChatMessage", (chatMessage, html, messageData) => {
     Chat.addChatListeners(chatMessage, html, messageData)
 });
+
 Hooks.once("ready", async function() {
     var logo = document.getElementById("logo");
     logo.setAttribute("src", "/systems/paradisPerdu/img/paradisPerdu_titre.png");
     logo.style.maxWidth = "100px";
     sheetResize();
+
+    //creating 3d container
+    let container = document.create('div');
+    container.id = '3d-container';
+    document.body.append(container)
+
+    init3DMap(container);
     // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
     Hooks.on("hotbarDrop", (bar, data, slot) => createparadisPerduMacro(data, slot));
 

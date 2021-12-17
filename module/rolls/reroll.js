@@ -4,22 +4,28 @@ import {
 
 
 
+
 export async function reroll(event, chatMessage, html, messageData) {
     let succes = html.find("span.resultat")[html.find("span.resultat").length - 1];
     let targetDie = event.currentTarget;
     let nbrRelance = html.find("span.nbrRelance")[html.find("span.nbrRelance").length - 1];
-
+    targetDie.classList.remove("rerollable");
+    let newDie = targetDie.cloneNode();
+    newDie.classList.forEach(cl => {
+        console.log(cl)
+        if (cl.indexOf('dice') != -1) { newDie.classList.remove(cl) }
+    });
+    newDie.classList.add("rerollable")
+    targetDie.classList.add(`rerolled`);
     if (parseInt(nbrRelance.innerText) > 0) {
-
+        if (parseInt(targetDie.innerHTML) > 3) { succes.innerText = parseInt(succes.innerText) - 1; }
         let r = new Roll('1d6x6cs>3');
         await r.evaluate({ async: true });
 
         for (let d of r.terms[0].results) {
-            let newDie = targetDie.cloneNode();
             let reroll = d.result;
             newDie.innerText = reroll;
-            targetDie.classList.add(`rerolled`);
-            targetDie.classList.remove("rerollable");
+
             newDie.classList.add(`dice${reroll}`);
             event.currentTarget.parentNode.append(newDie);
             if (reroll > 3) {
@@ -29,6 +35,7 @@ export async function reroll(event, chatMessage, html, messageData) {
         nbrRelance.innerText = parseInt(nbrRelance.innerText) - 1;
         let contentHTML = targetDie.closest('div.message-content').innerHTML;
 
+        console.log(contentHTML);
         let chatData = {
 
             content: contentHTML
@@ -39,7 +46,7 @@ export async function reroll(event, chatMessage, html, messageData) {
                 chatMessage.update(chatData)
             );
         } else {
-            chatMessage.update(chatData);
+            chatMessage.update(chatData)
         }
 
         /*
@@ -49,7 +56,7 @@ export async function reroll(event, chatMessage, html, messageData) {
 
 */
     } else {
-        ui.notifications.warn("Vous n'avez plus de relances disponible");
+        ui.notifications.warn("Vous n'avez plus de relances disponible")
     }
 
 }
