@@ -509,7 +509,19 @@ div#sidebar.collapsed #sidebar-tabs {
   border-bottom: 1px solid black;
 }
 
+#ui-bottom > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 #hotbar .bar-controls {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
   color: black;
   background: #c5c5c5;
   font-size: small;
@@ -686,7 +698,8 @@ div#sidebar.collapsed #sidebar-tabs {
 .dialog .dialog-buttons button,
 #client-settings section.content .submenu > button,
 form button,
-button:not(.file-picker, .grid-config) {
+button:not(.file-picker,
+.grid-config) {
   background: -webkit-gradient(linear, left top, left bottom, from(#919191), to(#a0aeb3));
   background: -o-linear-gradient(#919191, #a0aeb3);
   background: linear-gradient(#919191, #a0aeb3);

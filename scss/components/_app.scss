@@ -192,7 +192,6 @@ div#sidebar.collapsed {
         background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
         background-position: 55% 50%;
         background-size: 500% 100%;
-
         .scene-control,
         .control-tool {
             width: 36px;
@@ -221,10 +220,8 @@ div#sidebar.collapsed {
                 border: 1px solid #00c8ff54;
                 box-shadow: 0 0 6px inset #0084ff67;
                 background: #ff0000a2;
-
                 &:hover {
                     background: #ffa600a2;
-
                     border: 2px solid rgb(143, 142, 142);
                     box-shadow: 0px 0px 5px rgb(125, 128, 97) inset;
                 }
@@ -287,8 +284,14 @@ div#sidebar.collapsed {
     }
 }
 
+#ui-bottom>div {
+    display: flex;
+    justify-content: center;
+}
+
 #hotbar {
     .bar-controls {
+        flex: auto;
         color: black;
         background: rgb(197, 197, 197);
         font-size: small;
@@ -427,9 +430,10 @@ div#sidebar.collapsed {
 
 .dialog .dialog-buttons button.default,
 .dialog .dialog-buttons button,
-#client-settings section.content .submenu > button,
+#client-settings section.content .submenu>button,
 form button,
-button:not(.file-picker, .grid-config) {
+button:not(.file-picker,
+.grid-config) {
     background: linear-gradient(#919191, #a0aeb3);
     clip-path: polygon(0px 20px, 0px 0px, calc(100% - 20px) 0px, 100% calc(100% - 20px), 100% 100%, 0% 100%);
     cursor: pointer;
