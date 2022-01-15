@@ -290,6 +290,11 @@ div#sidebar.collapsed {
 }
 
 #hotbar {
+    width: unset;
+    #hotbar-directory-controls,
+    #hotbar-page-controls {
+        width: 40px
+    }
     .bar-controls {
         flex: auto;
         color: black;
@@ -404,6 +409,16 @@ div#sidebar.collapsed {
         border: none;
         animation: rotation 15s infinite cubic-bezier(0.3, 1.83, 0.48, -1);
         top: 0;
+    }
+}
+
+#container3d {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    canvas {
+        width: 100%!important;
+        height: 100%;
     }
 }
 

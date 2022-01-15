@@ -8,28 +8,17 @@
     "templateVersion": 2,
     "author": "Rwanoux",
     "esmodules": [
-        "module/paradisPerdu.js"
+        "modules/paradisPerdu.js"
     ],
     "styles": [
         "css/paradisPerdu.css"
     ],
     "scripts": [],
-    "languages": [
-        {
-            "lang": "fr",
-            "name": "Français",
-            "path": "lang/fr.json"
-        }
-    ],
-    "packs": [
-        {
-            "name": "pre-tires",
-            "label": "paradisPerdu-prétirés",
-            "path": "packs/pre-tires.db",
-            "entity": "Actor",
-            "system": "paradisPerdu"
-        }
-    ],
+    "languages": [{
+        "lang": "fr",
+        "name": "Français",
+        "path": "lang/fr.json"
+    }],
     "socket": true,
     "gridDistance": 1,
     "gridUnits": "m",

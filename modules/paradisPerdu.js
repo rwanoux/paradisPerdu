@@ -20,7 +20,7 @@ import {
 import * as Chat from "./chat.js"
 import { registerHelpers } from "./handlebarHelpers.js";
 import { sheetResize } from "./sheetResize.js";
-import { init3DMap } from "./3DMap.js";
+import { Map3d } from "./3DMap.js";
 
 
 
@@ -61,7 +61,9 @@ Hooks.once('init', async function() {
     CONFIG.fontFamilies.push("built", "Ddin", "aileron");
     CONFIG.defaultFontFamily = "Ddin";
 
+
     registerHelpers();
+    console.log('init done')
 });
 //----reroll button chat ---
 
@@ -69,20 +71,37 @@ Hooks.on("renderChatMessage", (chatMessage, html, messageData) => {
     Chat.addChatListeners(chatMessage, html, messageData)
 });
 
+Hooks.on("getSceneControlButtons", (controls) => {
+    controls.push({
+        name: "3d",
+        title: "3d",
+        icon: "fas fa-magic",
+        layer: "tokens",
+        visible: true,
+        tools: [],
+    });
+});
+
 Hooks.once("ready", async function() {
     var logo = document.getElementById("logo");
     logo.setAttribute("src", "/systems/paradisPerdu/img/paradisPerdu_titre.png");
     logo.style.maxWidth = "100px";
     sheetResize();
+    /*
+        //creating 3d container
 
-    //creating 3d container
-    let container = document.create('div');
-    container.id = '3d-container';
-    document.body.append(container)
+        let container = document.createElement('div');
+        container.id = 'container3d';
+        document.body.append(container)
 
-    init3DMap(container);
+        const map3d = new Map3d(container);
+        console.log(map3d);
+        map3d.init();
+
+        */
     // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
     Hooks.on("hotbarDrop", (bar, data, slot) => createparadisPerduMacro(data, slot));
+    console.log(game.get)
 
 });
 
