@@ -27,7 +27,7 @@ function compileScss() {
     .pipe(prefix({
       cascade: false
     }))
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./css"));
 }
 const css = gulp.series(compileScss);
 

@@ -9,6 +9,8 @@ body {
     font-family: "Ddin", sans-serif;
     font-size: 18px;
     box-shadow: 0 0 50vw #000 inset;
+    background-image: url(../assets/windows/fondApp.png);
+    background-size: cover;
 }
 
 h1,
@@ -94,7 +96,7 @@ div#sidebar.collapsed {
 
 #sidebar,
 #sidebar.collapsed {
-    background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+    background-image: url(../assets/windows/fondApp.png);
     background-position: 55% 50%;
     background-size: 500% 100%;
     #sidebar-tabs {
@@ -141,7 +143,7 @@ div#sidebar.collapsed {
             .scene-name {
                 font-family: aileron;
             }
-            background: url(../img/ParadisPerdu_fond_sanstitre.jpg) !important;
+            background: url(../assets/windows/fondApp.png) !important;
             background-size: cover !important;
             border: none;
             box-shadow: 20px 10px 15px #3e8c5cbf inset;
@@ -189,7 +191,7 @@ div#sidebar.collapsed {
 #controls {
     ol {
         height: fit-content;
-        background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+        background-image: url(../assets/windows/fondApp.png);
         background-position: 55% 50%;
         background-size: 500% 100%;
 
@@ -244,7 +246,7 @@ div#sidebar.collapsed {
             padding: 0px;
             .control-tool,
             .scene-control {
-                margin: 3px 0px;
+                margin: 5px;
             }
         }
     }
@@ -286,13 +288,17 @@ div#sidebar.collapsed {
         }
     }
 }
-
+#ui-bottom > div {
+    display: flex;
+    justify-content: center;
+}
 #hotbar {
     .bar-controls {
         color: black;
         background: rgb(197, 197, 197);
         font-size: small;
         margin: 0 0;
+        flex: auto;
         &#hotbar-directory-controls {
             border-radius: 30% 0% 0% 30%;
             border-right: 4px solid black;
@@ -346,13 +352,31 @@ div#sidebar.collapsed {
     .window-header {
         font-family: built;
         font-weight: lighter;
-        background: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+        background: url(../assets/windows/fondApp.png);
         color: rgb(255, 255, 255);
         background-size: cover;
-        box-shadow: 0px -5px 20px rgb(187, 187, 187) inset;
+        border-bottom: none;
+        box-shadow: none;
+        clip-path: polygon(
+            0% 0%,
+            0% 0%,
+            97% 3%,
+            100% 0%,
+            100% 100%,
+            100% 100%,
+            86% 97%,
+            86% 97%,
+            83% 82%,
+            95% 60%,
+            5% 60%,
+            15% 100%,
+            15% 100%,
+            0% 100%,
+            0% 100%
+        );
     }
-    .window-content {
-        background-image: unset;
+    section.window-content {
+        background-image: url(../assets/windows/fondApp.png);
     }
 }
 
@@ -421,7 +445,7 @@ div#sidebar.collapsed {
     color: #000000;
     overflow-y: auto;
     overflow-x: hidden;
-    background: url(../img/fondTemp.png);
+    background: url(../assets/windows/fondApp.png);
     background-size: cover;
 }
 

@@ -145,7 +145,15 @@
 ::-webkit-scrollbar-thumb {
   outline: none;
   border-radius: 3px;
-  background: -webkit-gradient(linear, left bottom, left top, from(#11758e), color-stop(28%, #097975), color-stop(62%, #04b9c9), to(#00404d));
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#11758e),
+    color-stop(28%, #097975),
+    color-stop(62%, #04b9c9),
+    to(#00404d)
+  );
   background: linear-gradient(0deg, #11758e 0%, #097975 28%, #04b9c9 62%, #00404d 100%);
   border: 1px solid white;
 }
@@ -162,6 +170,8 @@ body {
   font-size: 18px;
   -webkit-box-shadow: 0 0 50vw #000 inset;
   box-shadow: 0 0 50vw #000 inset;
+  background-image: url(../assets/windows/fondApp.png);
+  background-size: cover;
 }
 
 h1,
@@ -255,7 +265,7 @@ div#sidebar.collapsed #sidebar-tabs {
 
 #sidebar,
 #sidebar.collapsed {
-  background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+  background-image: url(../assets/windows/fondApp.png);
   background-position: 55% 50%;
   background-size: 500% 100%;
 }
@@ -291,7 +301,13 @@ div#sidebar.collapsed #sidebar-tabs {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   font-size: larger;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(100, 45, 45, 0.301)), to(rgba(38, 38, 87, 0.5)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(100, 45, 45, 0.301)),
+    to(rgba(38, 38, 87, 0.5))
+  );
   background: -o-linear-gradient(rgba(100, 45, 45, 0.301), rgba(38, 38, 87, 0.5));
   background: linear-gradient(rgba(100, 45, 45, 0.301), rgba(38, 38, 87, 0.5));
 }
@@ -316,7 +332,7 @@ div#sidebar.collapsed #sidebar-tabs {
 }
 
 #navigation #scene-list .scene {
-  background: url(../img/ParadisPerdu_fond_sanstitre.jpg) !important;
+  background: url(../assets/windows/fondApp.png) !important;
   background-size: cover !important;
   border: none;
   -webkit-box-shadow: 20px 10px 15px #3e8c5cbf inset;
@@ -383,7 +399,7 @@ div#sidebar.collapsed #sidebar-tabs {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-image: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+  background-image: url(../assets/windows/fondApp.png);
   background-position: 55% 50%;
   background-size: 500% 100%;
 }
@@ -411,7 +427,8 @@ div#sidebar.collapsed #sidebar-tabs {
   box-shadow: 0 0 6px inset #0084ff67;
 }
 
-#controls ol .scene-control:hover, #controls ol .scene-control.active,
+#controls ol .scene-control:hover,
+#controls ol .scene-control.active,
 #controls ol .control-tool:hover,
 #controls ol .control-tool.active {
   color: #00c9ff;
@@ -444,7 +461,8 @@ div#sidebar.collapsed #sidebar-tabs {
   box-shadow: 0px 0px 5px #eff874 inset;
 }
 
-#controls ol.main-controls, #controls ol.sub-controls.active {
+#controls ol.main-controls,
+#controls ol.sub-controls.active {
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -460,9 +478,10 @@ div#sidebar.collapsed #sidebar-tabs {
 }
 
 #controls ol.main-controls .control-tool,
-#controls ol.main-controls .scene-control, #controls ol.sub-controls.active .control-tool,
+#controls ol.main-controls .scene-control,
+#controls ol.sub-controls.active .control-tool,
 #controls ol.sub-controls.active .scene-control {
-  margin: 3px 0px;
+  margin: 5px;
 }
 
 #players {
@@ -509,11 +528,23 @@ div#sidebar.collapsed #sidebar-tabs {
   border-bottom: 1px solid black;
 }
 
+#ui-bottom > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 #hotbar .bar-controls {
   color: black;
   background: #c5c5c5;
   font-size: small;
   margin: 0 0;
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
 }
 
 #hotbar .bar-controls#hotbar-directory-controls {
@@ -550,7 +581,8 @@ div#sidebar.collapsed #sidebar-tabs {
   border-radius: 0;
 }
 
-#hotbar .macro.active:hover, #hotbar .macro:hover {
+#hotbar .macro.active:hover,
+#hotbar .macro:hover {
   -webkit-box-shadow: 0 0 10px #eff874 inset;
   box-shadow: 0 0 10px #eff874 inset;
   border: white;
@@ -575,7 +607,7 @@ div#sidebar.collapsed #sidebar-tabs {
 .window-app .window-header {
   font-family: built;
   font-weight: lighter;
-  background: url(../img/ParadisPerdu_fond_sanstitre.jpg);
+  background: url(../assets/windows/fondApp.png);
   color: white;
   background-size: cover;
   -webkit-box-shadow: 0px -5px 20px #bbbbbb inset;
@@ -678,7 +710,7 @@ div#sidebar.collapsed #sidebar-tabs {
   color: #000000;
   overflow-y: auto;
   overflow-x: hidden;
-  background: url(../img/fondTemp.png);
+  background: url(../assets/windows/fondApp.png);
   background-size: cover;
 }
 
@@ -700,7 +732,8 @@ button:not(.file-picker, .grid-config) {
   border: none;
 }
 
-.dialog .dialog-buttons button.default:hover, .dialog .dialog-buttons button.default:focus,
+.dialog .dialog-buttons button.default:hover,
+.dialog .dialog-buttons button.default:focus,
 .dialog .dialog-buttons button:hover,
 .dialog .dialog-buttons button:focus,
 #client-settings section.content .submenu > button:hover,
@@ -885,9 +918,26 @@ select option {
   color: rgba(0, 0, 0, 0.9);
   -o-text-overflow: clip;
   text-overflow: clip;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(126, 132, 146, 0.486)), color-stop(33%, rgba(212, 212, 212, 0.486)), to(rgba(167, 208, 243, 0.479)));
-  background-image: -o-linear-gradient(left, rgba(126, 132, 146, 0.486) 0, rgba(212, 212, 212, 0.486) 33%, rgba(167, 208, 243, 0.479) 100%);
-  background-image: linear-gradient(90deg, rgba(126, 132, 146, 0.486) 0, rgba(212, 212, 212, 0.486) 33%, rgba(167, 208, 243, 0.479) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, rgba(126, 132, 146, 0.486)),
+    color-stop(33%, rgba(212, 212, 212, 0.486)),
+    to(rgba(167, 208, 243, 0.479))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(126, 132, 146, 0.486) 0,
+    rgba(212, 212, 212, 0.486) 33%,
+    rgba(167, 208, 243, 0.479) 100%
+  );
+  background-image: linear-gradient(
+    90deg,
+    rgba(126, 132, 146, 0.486) 0,
+    rgba(212, 212, 212, 0.486) 33%,
+    rgba(167, 208, 243, 0.479) 100%
+  );
   background-position: 50% 50%;
   background-origin: padding-box;
   -webkit-background-clip: border-box;
@@ -958,7 +1008,7 @@ select option {
 }
 
 #chat-log .message {
-  background: url(../img/fondTemp.png) repeat;
+  background: url(../assets/windows/fondApp.png) repeat;
   animation: fromLeft 0.2s;
   -moz-animation: fromLeft 0.2s;
   /* Firefox */
@@ -1033,7 +1083,7 @@ select option {
 
 form.actorSheet,
 form.itemSheet {
-  background-image: url(../img/fondTemp.png);
+  background-image: url(../assets/windows/fondApp.png);
   background-size: cover;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -1184,9 +1234,35 @@ form.itemSheet .titleAdd {
   -webkit-appearance: input;
   -moz-appearance: input;
   appearance: input;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0)), color-stop(31%, rgba(169, 169, 255, 0.63)), color-stop(69%, rgba(169, 169, 255, 0.63)), color-stop(70%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
-  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(169, 169, 255, 0.63) 31%, rgba(169, 169, 255, 0.63) 69%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(169, 169, 255, 0.63) 31%, rgba(169, 169, 255, 0.63) 69%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(0, 0, 0, 0)),
+    color-stop(30%, rgba(0, 0, 0, 0)),
+    color-stop(31%, rgba(169, 169, 255, 0.63)),
+    color-stop(69%, rgba(169, 169, 255, 0.63)),
+    color-stop(70%, rgba(0, 0, 0, 0)),
+    to(rgba(0, 0, 0, 0))
+  );
+  background: -o-linear-gradient(
+    bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(169, 169, 255, 0.63) 31%,
+    rgba(169, 169, 255, 0.63) 69%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(169, 169, 255, 0.63) 31%,
+    rgba(169, 169, 255, 0.63) 69%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
   float: right;
   margin-top: 6px;
   font-size: smaller;
@@ -1535,7 +1611,8 @@ form.itemSheet .hex div {
   transform-origin: center center;
 }
 
-form.actorSheet .hex div:before, form.actorSheet .hex div:after,
+form.actorSheet .hex div:before,
+form.actorSheet .hex div:after,
 form.itemSheet .hex div:before,
 form.itemSheet .hex div:after {
   content: " ";
@@ -1692,7 +1769,8 @@ form.itemSheet .header input[type="radio"] {
   height: 16px;
 }
 
-form.itemSheet .header input[type="radio"]:after, form.itemSheet .header input[type="radio"]:before {
+form.itemSheet .header input[type="radio"]:after,
+form.itemSheet .header input[type="radio"]:before {
   position: absolute;
   content: ".";
   height: 16px;
@@ -1760,8 +1838,8 @@ a:hover {
 
 .tabs {
   height: 40px;
-  border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 }
 
 .tabs .item {
@@ -1796,7 +1874,7 @@ select[name="data.aptitudeName"] option {
 .items-list .item {
   line-height: 24px;
   padding: 3px 0;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
 }
 
 .items-list .item img.item-image {

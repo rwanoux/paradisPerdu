@@ -1,55 +1,71 @@
+{{log this}}
 <div class="titre1">
-    <p class="info">
-        jet de {{aptiName}}{{#if spe}} / {{spe}} {{/if}} avec {{aptiDice}} dés
-    </p>
-    {{#if relances}}
-    <p class="info">
-        {{relances}} relance(s) grâce au 6
-    </p>
-    {{/if}}
+	<p class="info">
+		jet de
+		{{aptiName}}
+		{{#if spe}}
+			/
+			{{spe}}
+		{{/if}}
+		avec
+		{{aptiDice}}
+		dés
+	</p>
+	{{#if relances}}
+		<p class="info">
+			{{relances}}
+			relance(s) grâce au 6
+		</p>
+	{{/if}}
 </div>
 <div class="bloque">
-    <p><span class="resultat left">{{result}} </span><span class="left">succès aux dés</span></p>
-    {{#if adrenaline}}
-    <p>
-        <span class="resultat left">+{{adrenaline}} </span><span class="left">succès automatiques</span>
-    </p>{{/if}}
+	<p>
+		<span class="resultat left">{{result}}
+		</span>
+		<span class="left">succès aux dés</span>
+	</p>
+	{{#if adrenaline}}
+		<p>
+			<span class="adrenaline left">+{{adrenaline}}
+			</span>
+			<span class="left">succès automatiques</span>
+		</p>
+	{{/if}}
 
-    <p><span class=" right"> difficulté {{difficulte}}</span></p>
+	<p>
+		<span class=" right">
+			difficulté
+			{{difficulte}}</span>
+	</p>
 
 </div>
 <ul class="dice-rolls flexrow">
-    {{#each dicesResults as |d|}}
-    <li class=" die d6 dice{{d}}{{#if ../relanceDispo}} rerollable{{/if}} ">{{d}}</div>
-        {{/each}}
-</ul>
-
-{{#if relanceDispo}}
+	{{#each dicesResults as |d|}}
+		<li class=" die d6 dice{{d}}{{#if ../relanceDispo }} rerollable{{/if}}">{{d}}</li>
+	</div>
+{{/each}}</ul>{{#if relanceDispo}}
 <div class="bloque ">
+	<span class="info">vous pouvez relancer
+		<span class="nbrRelance" datarelance="{{relanceDispo}}">{{relanceDispo}}</span>
+		dés</span>
 
-    <span class="info">vous pouvez relancer <span class="nbrRelance"
-            dataRelance="{{relanceDispo}}">{{relanceDispo}}</span> dés</span>
-
-</div>
-{{/if}} {{#if echec}}
+</div>{{/if}}{{#if echec}}
 <div class="bloque echec">
-    c'est un échec
-</div>
-{{/if}} {{#if reussite}}
+	c'est un échec
+</div>{{/if}}{{#if reussite}}
 <div class="bloque reussite">
-    <p>c'est une réussite</p>
+	<p>c'est une réussite</p>
 
-</div>
-{{/if}} {{#if echecT}}
+</div>{{/if}}{{#if echecT}}
 <div class="bloque echec">
-    c'est un échec total
-    <p class="info">(-1pt de resource)</p>
-    <p>votre adrenaline est à {{newRess}}</p>
-</div>
-{{/if}} {{#if reussiteT}}
+	c'est un échec total
+	<p class="info">(-1pt de resource)</p>
+	<p>votre adrenaline est à
+		{{newRess}}</p>
+</div>{{/if}}{{#if reussiteT}}
 <div class="bloque reussite">
-    c'est une reussite totale
-    <p class="info">(+1pt de resource)</p>
-    <p>votre adrenaline est à {{newRess}}</p>
-</div>
-{{/if}}
+	c'est une reussite totale
+	<p class="info">(+1pt de resource)</p>
+	<p>votre adrenaline est à
+		{{newRess}}</p>
+</div>{{/if}}
