@@ -194,7 +194,6 @@ div#sidebar.collapsed {
         background-image: url(../assets/windows/fondApp.png);
         background-position: 55% 50%;
         background-size: 500% 100%;
-
         .scene-control,
         .control-tool {
             width: 36px;
@@ -223,10 +222,8 @@ div#sidebar.collapsed {
                 border: 1px solid #00c8ff54;
                 box-shadow: 0 0 6px inset #0084ff67;
                 background: #ff0000a2;
-
                 &:hover {
                     background: #ffa600a2;
-
                     border: 2px solid rgb(143, 142, 142);
                     box-shadow: 0px 0px 5px rgb(125, 128, 97) inset;
                 }
@@ -288,12 +285,20 @@ div#sidebar.collapsed {
         }
     }
 }
+
 #ui-bottom > div {
     display: flex;
     justify-content: center;
 }
+
 #hotbar {
+    width: unset;
+    #hotbar-directory-controls,
+    #hotbar-page-controls {
+        width: 40px;
+    }
     .bar-controls {
+        flex: auto;
         color: black;
         background: rgb(197, 197, 197);
         font-size: small;
@@ -425,6 +430,16 @@ div#sidebar.collapsed {
         border: none;
         animation: rotation 15s infinite cubic-bezier(0.3, 1.83, 0.48, -1);
         top: 0;
+    }
+}
+
+#container3d {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    canvas {
+        width: 100% !important;
+        height: 100%;
     }
 }
 
